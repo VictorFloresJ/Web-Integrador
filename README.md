@@ -10,4 +10,8 @@ Por definir
 - Flores Juárez Víctor
 
 ### Tecnologías utilizadas
-Por definir
+- HTML
+- SASS
+- JavaScript
+- Gulp
+- NodeJS
