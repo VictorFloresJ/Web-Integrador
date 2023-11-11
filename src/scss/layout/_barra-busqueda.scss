@@ -1,0 +1,44 @@
+@use 'helpers/variables' as v;
+@use 'helpers/mixins' as m;
+
+
+.barra-busqueda {
+    height: 50rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        color: v.$blanco;
+        text-align: center;
+    }
+}
+
+.barra-busqueda form {
+    border: 1px solid v.$moradoClaro;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+
+    input,
+    button[type="submit"] {
+        padding: 1rem;
+        background-color: v.$morado;
+        border: 0;
+        color: v.$blanco;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    @include m.tablet {
+        width: 50%;
+        max-width: 70rem;
+    }
+}

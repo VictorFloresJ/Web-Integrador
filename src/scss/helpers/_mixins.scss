@@ -1,6 +1,6 @@
-@use "variables" as v;
+@use 'variables' as v;
 
-@mixin phone() {
+@mixin telefono() {
     @media only screen and (min-width: v.$telefono) {
         @content;
     }
@@ -12,14 +12,26 @@
     }
 }
 
-@mixin desktop() {
-    @media only screen and (min-width: v.$desktop) {
+@mixin escritorio() {
+    @media only screen and (min-width: v.$escritorio) {
         @content;
     }
 }
 
-@mixin desktop_xl() {
-    @media only screen and (min-width: v.$desktop_xl) {
+@mixin escritorio_xl() {
+    @media only screen and (min-width: v.$escritorio_xl) {
         @content;
+    }
+}
+
+@mixin boton($display, $color) {
+    width: 100%;
+    display: $display;
+    background-color: $color;
+    color: v.$blanco;
+    padding: 1rem 1.5rem;
+    border: none;
+    &:hover {
+        cursor: pointer;
     }
 }

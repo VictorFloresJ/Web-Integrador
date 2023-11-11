@@ -1,0 +1,46 @@
+@use 'helpers/variables' as v;
+@use 'helpers/mixins' as m;
+
+
+.header-login {
+    position: fixed;
+}
+
+.login {
+    width: 90%;
+    max-width: 120rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+    }
+}
+
+.login_formulario {
+    width: 100%;
+    -webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+.login_bienvenida {
+    -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+
+    @include m.tablet {
+        margin-bottom: 0;
+        font-size: 5rem;
+    }
+
+    color: v.$blanco;
+    font-weight: v.$bolder;
+}

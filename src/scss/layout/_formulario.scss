@@ -1,0 +1,42 @@
+@use 'helpers/variables' as v;
+@use 'helpers/mixins' as m;
+
+.formulario {
+    padding: 4rem 1rem;
+    background-color: v.$moradoClaro;
+    
+    fieldset {
+        border: none;
+    }
+
+    legend {
+        font-size: 2rem;
+        font-weight: v.$bold;
+        color: v.$blanco;
+    }
+
+    .campo {
+        display: block;
+        width: 100%;
+        margin-top: 4rem;
+        &:last-of-type {
+            margin-bottom: 4rem;
+        }
+    }
+
+    label {
+        font-size: 1.8rem;
+        font-weight: v.$regular;
+        color: v.$blanco;
+        display: block;
+    }
+
+    input:not([type="submit"]) {
+        width: 100%;
+        border: none;
+        margin-top: 1.5rem;
+        padding: 1rem 1.5rem;
+        background-color: darken(v.$moradoClaro, 7);
+        color: v.$blanco;
+    }
+}

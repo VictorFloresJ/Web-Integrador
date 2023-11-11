@@ -1,0 +1,39 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.txt-negritas {
+    font-weight: v.$bold;
+}
+
+.txt-uppercase {
+    text-transform: uppercase;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.posicionador {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.esconder {
+    display: none;
+}
+
+.bg-claro {
+    width: 100%;
+    background-color: v.$moradoClaro;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.bg-oscuro {
+    width: 100%;
+    background-color: v.$morado;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
