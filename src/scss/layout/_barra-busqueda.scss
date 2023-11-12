@@ -3,7 +3,7 @@
 
 
 .barra-busqueda {
-    height: 50rem;
+    height: 70rem;
     padding-right: 1rem;
     padding-left: 1rem;
     width: 100%;
@@ -40,5 +40,14 @@
     @include m.tablet {
         width: 50%;
         max-width: 70rem;
+    }
+}
+
+.barra-busqueda.fondo-cambiante {
+    @include m.tablet {
+        background: url('/build/img/banner1.jpg');
+        background-size: cover;
+        background-position: center center;
+        transition: background 1s ease-in-out;
     }
 }

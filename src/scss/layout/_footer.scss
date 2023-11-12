@@ -1,0 +1,40 @@
+@use 'helpers/variables' as v;
+@use 'helpers/mixins' as m;
+
+.footer {
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    @include m.tablet {
+        flex-direction: row;
+        justify-content: space-around;
+        column-gap: 2rem;
+    }
+}
+
+.footer_iconos,
+.footer_lista {
+    h4 {
+        color: v.$blanco;
+        font-weight: v.$bold;
+        margin-bottom: 1rem;
+    }
+}
+
+.footer_lista {
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+.footer_iconos {
+    h4 {
+        display: block;
+    }
+    a {
+        margin-right: 1rem;
+    }
+}

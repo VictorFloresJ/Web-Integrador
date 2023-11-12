@@ -4,7 +4,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function eventListeners()
 {
+    bannerCambiante();
     crearSliderCarrusel();
+}
+
+function bannerCambiante() {
+    const anchoDispositivo = window.innerWidth;
+    cambiarFondo();
+    if (anchoDispositivo > 768) {
+        setInterval(cambiarFondo, 5000);
+    }
+}
+
+function cambiarFondo() {
+    let banner = document.querySelector('.barra-busqueda');
+    const cantidadBanners = 7;
+
+    let numeroAleatorio = Math.floor(Math.random() * cantidadBanners) + 1;
+    let rutaImagen = '/build/img/banner' + numeroAleatorio + '.jpg';
+
+    banner.style.background = 'url("' + rutaImagen + '")';
 }
 
 function crearSliderCarrusel() {
@@ -23,3 +42,16 @@ function crearSliderCarrusel() {
         });
     });
 }
+
+
+// Obtener el contenedor
+var contenedor = document.querySelector('.barra-busqueda');
+
+// Obtener el ancho y la altura del contenedor
+var anchoContenedor = contenedor.offsetWidth;
+var alturaContenedor = contenedor.offsetHeight;
+
+// Calcular la relación de aspecto
+var relacionAspecto = anchoContenedor / alturaContenedor;
+
+console.log("Relación de aspecto del contenedor: " + relacionAspecto);
