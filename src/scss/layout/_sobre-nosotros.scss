@@ -1,0 +1,53 @@
+@use 'helpers/variables' as v;
+@use 'helpers/mixins' as m;
+
+.sobre-nosotros {
+    margin: 10rem auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    @include m.escritorio {
+        flex-direction: row;
+        align-items: center;
+        column-gap: 2rem;
+    }
+    .sobre-nosotros_contenido {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        color: v.$blanco;
+        @include m.escritorio {
+            margin-top: -5rem;
+        }
+    }
+    .sobre-nosotros_imagen img {
+        border-radius: 5%;
+    }
+}
+
+.webp .sobre-nosotros_banner {
+    background-image: url('/build/img/banner2.webp');
+}
+
+.no-webp .sobre-nosotros_banner {
+    background-image: url('/build/img/banner2.jpg');
+}
+
+.sobre-nosotros_banner {
+    height: 60rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 75% 25%;
+    .contenedor {
+        height: 60rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2, p {
+            color: v.$blanco;
+            margin-bottom: 2rem;
+            max-width: 50rem;
+        }
+    }
+}
