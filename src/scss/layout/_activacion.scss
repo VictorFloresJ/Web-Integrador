@@ -1,0 +1,47 @@
+@use 'helpers/variables' as v;
+@use 'helpers/mixins' as m;
+
+.guia {
+    margin: 4rem auto;
+}
+
+.guia_contenido {
+    color: v.$blanco;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+    max-width: 70rem;
+}
+
+.guia-plataforma {
+    margin-bottom: 6rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    @include m.tablet {
+        row-gap: 0;
+        column-gap: 0;
+        grid-template-columns: 4fr 1fr;
+    }
+    align-items: center;
+    border-bottom: 4px solid v.$moradoClaro;
+    padding: 2rem;
+    padding-left: 4rem;
+}
+
+
+.guia-plataforma_contenido {
+    h2, p, li {
+        color: v.$blanco;
+    }
+    h2 {
+        font-size: 3rem;
+        font-weight: v.$regular;
+        margin-bottom: 2rem;
+    }
+    ol li {
+        margin-bottom: 2rem;
+    }
+    .mas-info a {
+        color: v.$moradoClaro;
+    }
+}
