@@ -1,0 +1,2 @@
+const flechaIzquierda=document.querySelector(".paginador-flecha-izquierda"),flechaDerecha=document.querySelector(".paginador-flecha-derecha"),paginaActual=document.querySelector(".productos");flechaIzquierda.addEventListener("click",()=>{paginaActual.scrollLeft=paginaActual.scrollLeft-paginaActual.clientWidth}),flechaDerecha.addEventListener("click",()=>{paginaActual.scrollLeft=paginaActual.scrollLeft+paginaActual.clientWidth});
+//# sourceMappingURL=paginador.js.map

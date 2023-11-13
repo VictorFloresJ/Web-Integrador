@@ -1,0 +1,94 @@
+@use 'helpers/variables' as v;
+@use 'helpers/mixins' as m;
+
+.paginacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .flechas {
+        margin-top: 4rem;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 5rem;
+        cursor: pointer;
+    }
+}
+
+.paginador-flecha-izquierda,
+.paginador-flecha-derecha {
+    font-size: 3rem;
+    color: v.$blanco;
+    transition: .1s ease all;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.productos {
+    margin-top: 4rem;
+    max-width: 120rem;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.productos-pagina {
+    min-width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    @include m.tablet { grid-template-columns: repeat(3, 1fr); }
+    @include m.escritorio { grid-template-columns: repeat(4, 1fr); }
+    @include m.escritorio_xl { grid-template-columns: repeat(5, 1fr); }
+}
+
+.producto {
+    min-width: 45%;
+    @include m.tablet { min-width: 25%; }
+    @include m.escritorio { min-width: 20%; }
+    @include m.escritorio_xl { min-width: 18%; }
+    padding: 1rem;
+    transition: .2s ease-in-out all;
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.producto .producto_contenido {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: darken(v.$morado, 5);
+    .producto-titulo {
+        font-size: 2rem;
+        color: v.$blanco;
+        margin-bottom: 0.5rem;
+    }
+    .precio {
+        font-size: 2rem;
+        font-weight: v.$bold;
+        letter-spacing: 0.1rem;
+        color: v.$verde;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.producto_contenido form {
+    img {
+        width: 1.5rem;
+        filter: invert(100%);
+    }
+    button {
+        background-color: v.$moradoClaro;
+        border: 0;
+        padding: 0.5rem;
+        border-radius: 5%;
+        color: v.$blanco;
+        &:hover {
+            background-color: darken(v.$moradoClaro, 5);
+        }
+    }
+}

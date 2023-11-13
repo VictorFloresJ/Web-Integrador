@@ -7,7 +7,8 @@ function eventListeners()
     crearSliderCarrusel();
 }
 
-function crearSliderCarrusel() {
+function crearSliderCarrusel() 
+{
     const flechasIzquierdas = document.querySelectorAll(".carrusel-flecha-izquierda")
     const flechasDerechas = document.querySelectorAll(".carrusel-flecha-derecha");
     flechasIzquierdas.forEach(flecha_izquierda => {

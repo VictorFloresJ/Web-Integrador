@@ -1,4 +1,5 @@
-function bannerCambiante() {
+function bannerCambiante() 
+{
     let banner = document.querySelector('.fondo-cambiante');
     const cantidadBanners = 6;
 
