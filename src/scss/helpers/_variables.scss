@@ -1,11 +1,12 @@
 // Fuentes
-$font: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap');
+$font: 'Open Sans', sans-serif;
 
 // Tamaño de fuentes
 $delgada: 300;
 $regular : 400;
 $bold: 700;
-$bolder: 900;
+$bolder: 800;
 
 // Tamaño de dispositivos
 $telefono: 480px;

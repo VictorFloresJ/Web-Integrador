@@ -1,0 +1,83 @@
+@use 'helpers/variables' as v;
+@use 'helpers/mixins' as m;
+
+.compras {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    @include m.escritorio {
+        margin-top: 8rem;
+        margin-bottom: 8rem;
+    } 
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: flex-start;
+    column-gap: 2rem;
+    fieldset {
+        border: 0;
+    }
+    select {
+        background-color: v.$moradoClaro;
+        border: 0;
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        width: fit-content;
+    }
+}
+
+.compras_productos {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.compras_videojuego {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    @include m.tablet { 
+        grid-template-columns: 1fr 2fr ;
+        column-gap: 2rem;
+    }
+    .videojuego-cantidad {
+        font-size: 2rem;
+        color: v.$blanco;
+    }
+}
+
+.compras_checkout {
+    padding: 2rem;
+    background-color: v.$moradoClaro;
+    min-height: 40rem;
+    p {
+        font-size: 1.8rem;
+        color: v.$blanco;
+        margin-bottom: 2rem;
+        font-weight: v.$bold;
+    }
+    .campo {
+        display: block;
+        margin-bottom: 2rem;
+    }
+    label, 
+    input {
+        display: block;
+        font-weight: v.$bold;
+    }
+    label {
+        margin-bottom: 0.5rem;
+        color: v.$blanco;
+    }
+    input:not([type="submit"]) {
+        width: 100%;
+        background-color: transparent;
+        border: 1px solid v.$morado;
+        padding: 0.5rem;
+        color: v.$blanco;
+        font-weight: v.$regular;
+    }
+    .fecha-tarjeta,
+    .cvv-tarjeta {
+        width: 25%;
+    }
+
+}

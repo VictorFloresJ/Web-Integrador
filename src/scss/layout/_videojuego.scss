@@ -1,0 +1,54 @@
+@use 'helpers/variables' as v;
+@use 'helpers/mixins' as m;
+
+.videojuego {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    @include m.escritorio {
+        margin-top: 8rem;
+        margin-bottom: 8rem;
+    }
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 2rem;
+    @include m.escritorio { grid-template-columns: 1fr 2fr; }
+}
+
+.videojuego_contenido {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    .videojuego-titulo {
+        margin: 0;
+        color: v.$blanco;
+    }
+    .videojuego-precio {
+        font-size: 2.5rem;
+        color: v.$verde;
+        font-weight: v.$bolder;
+    }
+    .videojuego-plataforma {
+        font-size: 2.5rem;
+        color: v.$blanco;
+    }
+    .videojuego-descripcion {
+        line-height: 1.5;
+        color: v.$blanco;
+    }
+    img {
+        width: 2rem;
+        filter: invert(100%);
+    }
+    button {
+        font-size: 2rem;
+        background-color: v.$moradoClaro;
+        border: 0;
+        padding: 1rem;
+        border-radius: 5%;
+        color: v.$blanco;
+        cursor: pointer;
+        &:hover {
+            background-color: darken(v.$moradoClaro, 5);
+        }
+    }
+}
