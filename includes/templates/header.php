@@ -29,8 +29,8 @@
     </header><!--.header-->
 
     <nav class="navegacion">
-        <a href="categoria.php">Xbox</a>
-        <a href="categoria.php">PlayStation</a>
-        <a href="categoria.php">Nintendo</a>
-        <a href="categoria.php">PC</a>
+        <a href="categoria.php?id=1">Xbox</a>
+        <a href="categoria.php?id=2">PlayStation</a>
+        <a href="categoria.php?id=3">Nintendo</a>
+        <a href="categoria.php?id=4">PC</a>
     </nav><!--.navegacion-->

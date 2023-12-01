@@ -4,7 +4,8 @@
 .paginacion {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     .flechas {
         margin-top: 4rem;
         display: flex;
@@ -31,6 +32,7 @@
     max-width: 120rem;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     overflow: hidden;
     scroll-behavior: smooth;
 }
@@ -39,7 +41,7 @@
     min-width: 100%;
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     grid-template-columns: repeat(2, 1fr);
     @include m.tablet { grid-template-columns: repeat(3, 1fr); }
     @include m.escritorio { grid-template-columns: repeat(4, 1fr); }
@@ -54,7 +56,7 @@
     padding: 1rem;
     transition: .2s ease-in-out all;
     &:hover {
-        transform: scale(1.02);
+        transform: scale(0.98);
     }
 }
 
@@ -63,7 +65,7 @@
     padding: 1rem;
     background-color: darken(v.$morado, 5);
     .producto-titulo {
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: v.$blanco;
         margin-bottom: 0.5rem;
     }
@@ -91,5 +93,21 @@
         &:hover {
             background-color: darken(v.$moradoClaro, 5);
         }
+    }
+}
+
+.producto_contenido button {
+    background-color: v.$moradoClaro;
+    border: 0;
+    padding: 0.5rem;
+    border-radius: 5%;
+    color: v.$blanco;
+    cursor: pointer;
+    &:hover {
+        background-color: darken(v.$moradoClaro, 5);
+    }
+    img {
+        width: 1.5rem;
+        filter: invert(100%);
     }
 }

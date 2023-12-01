@@ -2,6 +2,9 @@
 @use 'helpers/mixins' as m;
 
 .videojuego {
+    width: 99%;
+    max-width: 160rem;
+    margin: 0 auto;
     margin-top: 4rem;
     margin-bottom: 4rem;
     @include m.escritorio {
@@ -11,7 +14,10 @@
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 2rem;
-    @include m.escritorio { grid-template-columns: 1fr 2fr; }
+    @include m.escritorio { 
+        grid-template-columns: 1fr 2fr; 
+        align-items: flex-start;
+    }
 }
 
 .videojuego_contenido {
@@ -27,13 +33,23 @@
         color: v.$verde;
         font-weight: v.$bolder;
     }
-    .videojuego-plataforma {
+    .videojuego-plataforma img {
+        width: 5rem;
+        height: auto;
+    }
+    .videojuego-plataforma_texto {
         font-size: 2.5rem;
+        font-weight: v.$bolder;
         color: v.$blanco;
     }
     .videojuego-descripcion {
-        line-height: 1.5;
+        font-size: 1.8rem;
+        font-family: v.$font;
+        // text-align: justify;
+        line-height: normal;
+        letter-spacing: 1px;
         color: v.$blanco;
+        white-space: pre-wrap;
     }
     img {
         width: 2rem;
@@ -44,11 +60,12 @@
         background-color: v.$moradoClaro;
         border: 0;
         padding: 1rem;
-        border-radius: 5%;
+        border-radius: 2%;
         color: v.$blanco;
         cursor: pointer;
         &:hover {
             background-color: darken(v.$moradoClaro, 5);
         }
+        width: max-content;
     }
 }

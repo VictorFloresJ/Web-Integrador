@@ -41,6 +41,8 @@
 <script src="build/js/app.js"></script>
 <!-- Slider  -->
 <script src="build/js/slider.js"></script>
+<!-- Paginador  -->
+<script src="build/js/paginador.js"></script>
 <!-- Iconos -->
 <script src="https://kit.fontawesome.com/8951c38389.js" crossorigin="anonymous"></script>
 </body>

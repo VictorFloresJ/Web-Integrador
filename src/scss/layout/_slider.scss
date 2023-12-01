@@ -75,15 +75,16 @@
     flex-direction: column;
     justify-content: space-between;
 
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: v.$blanco;
     font-weight: v.$bold;
     transition: .2s ease-in-out all;
     &:hover {
-        transform: scale(1.05);
+        transform: scale(0.95);
     }
     p.precio {
         color: v.$verde;
+        font-size: 1.8rem;
     }
     img {
         max-width: 100%;

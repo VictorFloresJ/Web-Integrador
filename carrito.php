@@ -8,7 +8,7 @@ incluirTemplate('header');
         <fieldset class="compras_productos">
             <div class="compras_videojuego entrar-izquierda">
                 <div class="videojuego_imagen">
-                    <img src="/build/img/nier.jpg" alt="videojuego imagen">
+                    <img src="build/img/nier.jpg" alt="videojuego imagen">
                 </div>
                 <div class="videojuego_contenido">
                     <h1 class="videojuego-titulo">Nier Autómata</h1>
@@ -30,7 +30,7 @@ incluirTemplate('header');
             </div>
             <div class="compras_videojuego entrar-izquierda">
                 <div class="videojuego_imagen">
-                    <img src="/build/img/nier.jpg" alt="videojuego imagen">
+                    <img src="build/img/nier.jpg" alt="videojuego imagen">
                 </div>
                 <div class="videojuego_contenido">
                     <h1 class="videojuego-titulo">Nier Autómata</h1>
@@ -52,7 +52,7 @@ incluirTemplate('header');
             </div>
             <div class="compras_videojuego entrar-izquierda">
                 <div class="videojuego_imagen">
-                    <img src="/build/img/nier.jpg" alt="videojuego imagen">
+                    <img src="build/img/nier.jpg" alt="videojuego imagen">
                 </div>
                 <div class="videojuego_contenido">
                     <h1 class="videojuego-titulo">Nier Autómata</h1>
