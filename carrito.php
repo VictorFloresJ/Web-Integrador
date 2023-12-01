@@ -1,43 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+require __DIR__ . "/includes/app.php";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-
-    <!-- Hojas de estilo -->
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-
-<body>
-    <header class="header">
-        <a href="index.html" class="logo">
-            <img loading="lazy" src="/build/img/logo.png" alt="logo">
-        </a>
-        <div class="header-derecha">
-            <a href="login.html">
-                <div class="usuario-icono">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <p>Iniciar sesión</p>
-            </a>
-            <a href="carrito.html" class="carrito-icono">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-        </div><!--.header-derecha-->
-    </header><!--.header-->
-
-    <nav class="navegacion">
-        <a href="categoria.html">Xbox</a>
-        <a href="categoria.html">PlayStation</a>
-        <a href="categoria.html">Nintendo</a>
-        <a href="categoria.html">PC</a>
-    </nav><!--.navegacion-->
+incluirTemplate('header');
+?>
 
     <form class="contenedor compras">
         <fieldset class="compras_productos">
-            <div class="compras_videojuego">
+            <div class="compras_videojuego entrar-izquierda">
                 <div class="videojuego_imagen">
                     <img src="/build/img/nier.jpg" alt="videojuego imagen">
                 </div>
@@ -59,7 +28,7 @@
                     </select>
                 </div>
             </div>
-            <div class="compras_videojuego">
+            <div class="compras_videojuego entrar-izquierda">
                 <div class="videojuego_imagen">
                     <img src="/build/img/nier.jpg" alt="videojuego imagen">
                 </div>
@@ -81,7 +50,7 @@
                     </select>
                 </div>
             </div>
-            <div class="compras_videojuego">
+            <div class="compras_videojuego entrar-izquierda">
                 <div class="videojuego_imagen">
                     <img src="/build/img/nier.jpg" alt="videojuego imagen">
                 </div>
@@ -104,9 +73,9 @@
                 </div>
             </div>
         </fieldset>
-        <fieldset class="compras_checkout">
+        <fieldset class="compras_checkout entrar-derecha">
             <p>Introduce tus datos y realiza el pago</p>
-            <div class="campo">
+            <div class="campo entrar-derecha">
                 <label for="titular-tarjeta">Titular de la tarjeta</label>
                 <input type="text" name="titular" id="titular">
             </div>
@@ -131,7 +100,7 @@
             <h4>Sobre <span class="txt-negritas">PirateKeys</span></h4>
             <ul class="footer_lista">
                 <li>
-                    <a href="sobrenosotros.html">Sobre nosotros</a>
+                    <a href="sobrenosotros.php">Sobre nosotros</a>
                 </li>
             </ul>
         </div>
@@ -139,7 +108,7 @@
             <h4>Ayuda</h4>
             <ul class="footer_lista">
                 <li>
-                    <a href="guia_activacion.html">¿Cómo activo una clave?</a>
+                    <a href="guia_activacion.php">¿Cómo activo una clave?</a>
                 </li>
             </ul>
         </div>

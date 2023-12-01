@@ -1,43 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+require __DIR__ . "/includes/app.php";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-
-    <!-- Hojas de estilo -->
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-
-<body>
-    <header class="header">
-        <a href="index.html" class="logo">
-            <img loading="lazy" src="/build/img/logo.png" alt="logo">
-        </a>
-        <div class="header-derecha">
-            <a href="login.html">
-                <div class="usuario-icono">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <p>Iniciar sesión</p>
-            </a>
-            <a href="carrito.html" class="carrito-icono">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-        </div><!--.header-derecha-->
-    </header><!--.header-->
-
-    <nav class="navegacion">
-        <a href="categoria.html">Xbox</a>
-        <a href="categoria.html">PlayStation</a>
-        <a href="categoria.html">Nintendo</a>
-        <a href="categoria.html">PC</a>
-    </nav><!--.navegacion-->
+incluirTemplate('header');
+?>
 
     <main class="contenedor videojuego">
         <div class="videojuego_imagen">
-            <img src="/build/img/nier.jpg" alt="videojuego imagen">
+            <img src="build/img/nier.jpg" alt="videojuego imagen">
         </div>
         <div class="videojuego_contenido">
             <h1 class="videojuego-titulo">Nier Autómata</h1>
@@ -46,7 +15,7 @@
             <p class="videojuego-descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic temporibus, beatae architecto magnam omnis, porro dolore eius dolorum id tempora natus alias iure reprehenderit expedita ipsum. Sunt quia natus quasi?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa veniam nobis et nam aspernatur quae alias consequatur quis a. Consectetur saepe facere unde cupiditate quam, corrupti tempora minima illum illo Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure accusantium perferendis molestias dolores, laboriosam odio, placeat nobis non quos commodi autem totam sapiente laudantium natus aliquid? Repudiandae cupiditate officia tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus repudiandae minima omnis dignissimos voluptatum! Ipsa architecto iusto ducimus veniam facere laborum. Dolor delectus in expedita accusamus illum reiciendis explicabo nostrum.</p>
             <form action="" method="GET">
                 <button type="submit">
-                    <img src="/build/img/carrito-plus.svg" alt="icono carrito"> Comprar ahora
+                    <img src="build/img/carrito-plus.svg" alt="icono carrito"> Comprar ahora
                 </button>
             </form><!--.formulario-->
         </div>
@@ -57,7 +26,7 @@
             <h4>Sobre <span class="txt-negritas">PirateKeys</span></h4>
             <ul class="footer_lista">
                 <li>
-                    <a href="sobrenosotros.html">Sobre nosotros</a>
+                    <a href="sobrenosotros.php">Sobre nosotros</a>
                 </li>
             </ul>
         </div>
@@ -65,7 +34,7 @@
             <h4>Ayuda</h4>
             <ul class="footer_lista">
                 <li>
-                    <a href="guia_activacion.html">¿Cómo activo una clave?</a>
+                    <a href="guia_activacion.php">¿Cómo activo una clave?</a>
                 </li>
             </ul>
         </div>

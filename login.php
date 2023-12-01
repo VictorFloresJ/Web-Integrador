@@ -12,8 +12,8 @@
 
 <body>
     <header class="header header-login">
-        <a href="index.html" class="logo">
-            <img loading="lazy" src="/build/img/logo.png" alt="logo">
+        <a href="index.php" class="logo">
+            <img loading="lazy" src="./build/img/logo.png" alt="logo">
         </a>
     </header>
 

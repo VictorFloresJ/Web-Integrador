@@ -1,39 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+require __DIR__ . "/includes/app.php";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-
-    <!-- Hojas de estilo -->
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-
-<body>
-    <header class="header">
-        <a href="index.html" class="logo">
-            <img loading="lazy" src="/build/img/logo.png" alt="logo">
-        </a>
-        <div class="header-derecha">
-            <a href="login.html">
-                <div class="usuario-icono">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <p>Iniciar sesión</p>
-            </a>
-            <a href="carrito.html" class="carrito-icono">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-        </div><!--.header-derecha-->
-    </header><!--.header-->
-
-    <nav class="navegacion">
-        <a href="categoria.html">Xbox</a>
-        <a href="categoria.html">PlayStation</a>
-        <a href="categoria.html">Nintendo</a>
-        <a href="categoria.html">PC</a>
-    </nav><!--.navegacion-->
+incluirTemplate('header');
+?>
 
     <main class="barra-busqueda fondo-cambiante">
         <h1>Busca tus juegos favoritos</h1>
@@ -54,56 +23,56 @@
                 </div>
                 <div class="carrusel">
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
@@ -128,56 +97,56 @@
                 </div>
                 <div class="carrusel">
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
@@ -202,56 +171,56 @@
                 </div>
                 <div class="carrusel">
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
@@ -276,56 +245,56 @@
                 </div>
                 <div class="carrusel">
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
                         </a>
                     </div><!--.carrusel-card-->
                     <div class="carrusel-card">
-                        <a href="videojuego.html">
+                        <a href="videojuego.php">
                             <img src="build/img/nier.jpg" alt="foto juego">
                             <p>Elden Ring</p>
                             <p class="precio">$79.99</p>
@@ -340,47 +309,6 @@
     </div><!--.bg-oscuro-->
 
 
-    <footer class="contenedor footer">
-        <div class="footer_lista">
-            <h4>Sobre <span class="txt-negritas">PirateKeys</span></h4>
-            <ul class="footer_lista">
-                <li>
-                    <a href="sobrenosotros.html">Sobre nosotros</a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer_lista">
-            <h4>Ayuda</h4>
-            <ul class="footer_lista">
-                <li>
-                    <a href="guia_activacion.html">¿Cómo activo una clave?</a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer_iconos">
-            <h4>Redes sociales</h4>
-            <a href="https://www.facebook.com/" class="icon-link" target="_blank">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/" class="icon-link" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://twitter.com/home" class="icon-link" target="_blank">
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="https://www.twitch.tv/" class="icon-link" target="_blank">
-                <i class="fa-brands fa-twitch"></i>
-            </a>
-            <a href="https://www.youtube.com/" class="icon-link" target="_blank">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-        </div><!--.footer_iconos-->
-    </footer><!--.footer-->
-    
-    <!-- Modernizr  -->
-    <script src="build/js/modernizr.js"></script>
-    <!-- Iconos -->
-    <script src="https://kit.fontawesome.com/8951c38389.js" crossorigin="anonymous"></script>
-</body>
-
-</html>
+<?php 
+incluirTemplate("footer");
+?>
