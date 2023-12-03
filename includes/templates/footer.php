@@ -37,14 +37,7 @@
 
 <!-- Modernizr  -->
 <script src="build/js/modernizr.js"></script>
-<!-- App  -->
-<script src="build/js/app.js"></script>
-<!-- Slider  -->
-<script src="build/js/slider.js"></script>
-<!-- Paginador  -->
-<script src="build/js/paginador.js"></script>
 <!-- Iconos -->
 <script src="https://kit.fontawesome.com/8951c38389.js" crossorigin="anonymous"></script>
-</body>
 
-</html>
+<!-- El resto de Scripts se ponen de forma individual en cada archivo PHP, así como el fin de la etiqueta body y html -->

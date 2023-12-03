@@ -168,3 +168,10 @@ incluirTemplate('header');
 $db->close();
 incluirTemplate("footer");
 ?>
+<!-- Banner  -->
+<script src="build/js/banner.js"></script>
+<!-- Slider  -->
+<script src="build/js/carrusel.js"></script>
+</body>
+
+</html>

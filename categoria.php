@@ -8,7 +8,10 @@ if (!$id_plataforma) {
     exit();
 }
 
-$query = "SELECT videojuegos.nombre_videojuego AS nombre, inventario.precio AS precio, videojuegos.imagen_videojuego AS imagen
+$query = "SELECT videojuegos.nombre_videojuego AS nombre, 
+          inventario.precio AS precio, 
+          videojuegos.imagen_videojuego AS imagen,
+          videojuegos.id AS id
           FROM inventario
           JOIN videojuegos ON inventario.id_videojuego = videojuegos.id
           JOIN plataformas ON inventario.id_plataforma = plataformas.id
@@ -25,7 +28,10 @@ $cantidadJuegos = mysqli_num_rows($resultado);
 $cantidadPaginas = ceil($cantidadJuegos / 20);
 
 incluirTemplate('header');
+incluirTemplate('filtros');
 ?>
+
+
 
 <main class="contenedor paginacion">
     <div class="productos">
@@ -33,14 +39,14 @@ incluirTemplate('header');
             <div class="productos-pagina">
                 <?php $j = 0; ?>
                 <?php while ($j < 20 && $videojuego = mysqli_fetch_assoc($resultado)) : ?>
-                    <div class="producto">
+                    <div class="producto" id="<?php echo $videojuego['id']; ?>">
                         <div class="producto_imagen">
                             <img src="images/<?php echo $videojuego['imagen']; ?>" alt="imagen producto" loading="lazy">
                         </div><!--.imagen-->
                         <div class="producto_contenido">
                             <p class="producto-titulo"><?php echo $videojuego['nombre']; ?></p>
                             <p class="precio">$<?php echo $videojuego['precio']; ?></p>
-                            <button type="submit">
+                            <button type="submit" data-id="<?php echo $videojuego['id']; ?>" onclick="agregarAlCarrito(this)">
                                 <img src="./build/img/carrito-plus.svg" alt="icono carrito"> Agregar al carrito
                             </button>
                         </div><!--.contenido-->
@@ -65,3 +71,13 @@ incluirTemplate('header');
 $db->close();
 incluirTemplate('footer');
 ?>
+
+<!-- Paginador  -->
+<script src="build/js/paginador.js"></script>
+<!-- Filtros  -->
+<script src="build/js/filtros.js"></script>
+<!-- Agregar al carrito  -->
+<script src="build/js/agregarCarrito.js"></script>
+</body>
+
+</html>

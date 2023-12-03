@@ -1,16 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
-    eventListeners();
-});
+document.addEventListener('DOMContentLoaded', crearSliderCarrusel);
 
-function eventListeners()
-{
-    crearSliderCarrusel();
-}
-
-function crearSliderCarrusel() 
-{
+function crearSliderCarrusel() {
     const flechasIzquierdas = document.querySelectorAll(".carrusel-flecha-izquierda")
     const flechasDerechas = document.querySelectorAll(".carrusel-flecha-derecha");
+    
     flechasIzquierdas.forEach(flecha_izquierda => {
         flecha_izquierda.addEventListener("click", (e) => {
             const fila_actual = e.target.parentNode.nextElementSibling;

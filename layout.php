@@ -7,3 +7,5 @@ incluirTemplate('header');
 <?php
 incluirTemplate('footer');
 ?>
+</body>
+</html>

@@ -1,0 +1,2 @@
+function crearSliderCarrusel(){const e=document.querySelectorAll(".carrusel-flecha-izquierda"),r=document.querySelectorAll(".carrusel-flecha-derecha");e.forEach(e=>{e.addEventListener("click",e=>{const r=e.target.parentNode.nextElementSibling;r.scrollLeft=r.scrollLeft-r.offsetWidth})}),r.forEach(e=>{e.addEventListener("click",e=>{const r=e.target.parentNode.previousElementSibling;r.scrollLeft=r.scrollLeft+r.offsetWidth})})}document.addEventListener("DOMContentLoaded",crearSliderCarrusel);
+//# sourceMappingURL=carrusel.js.map

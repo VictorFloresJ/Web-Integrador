@@ -1,0 +1,2 @@
+function agregarAlCarrito(t){const e=t.getAttribute("data-id"),o=document.getElementById(e),r=o.querySelector(".producto_imagen img").getAttribute("src").substring("images/".length),i={id:e,titulo:o.querySelector(".producto-titulo").textContent,imagen:r,precio:o.querySelector(".precio").textContent},n=JSON.stringify(i);document.cookie=`producto_${e}=${encodeURIComponent(n)};`,alert("cookie guardada con éxito")}
+//# sourceMappingURL=agregarCarrito.js.map
