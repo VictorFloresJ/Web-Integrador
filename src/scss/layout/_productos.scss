@@ -67,7 +67,16 @@
     .producto-titulo {
         font-size: 1.5rem;
         color: v.$blanco;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.8rem;
+        display: block;
+    }
+    .producto-plataforma {
+        display: block;
+        font-size: 1.4rem;
+        color: v.$blanco;
+        font-weight: v.$bold;
+        letter-spacing: 0.1rem;
+        margin-bottom: 0.8rem;    
     }
     .precio {
         font-size: 2rem;

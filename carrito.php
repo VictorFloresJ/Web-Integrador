@@ -6,8 +6,8 @@ incluirTemplate('header');
 
 <form class="compras contenedor">
     <fieldset class="compras_productos">
-
     </fieldset>
+    
     <fieldset class="compras_checkout entrar-derecha">
         <p>Introduce tus datos y realiza el pago</p>
         <div class="campo entrar-derecha">
@@ -37,6 +37,8 @@ incluirTemplate('footer');
 
 <!-- Carrito  -->
 <script src="build/js/carrito.js"></script>
+<!-- Carrito  -->
+<script src="build/js/eliminarDelCarrito.js"></script>
 </body>
 
 </html>

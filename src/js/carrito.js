@@ -19,6 +19,7 @@ function obtenerCookies() {
 
             const productoElemento = document.createElement('div');
             productoElemento.classList.add('compras_videojuego', 'entrar-izquierda');
+            productoElemento.id = `${producto.id}_${producto.plataforma}`;
 
             productoElemento.innerHTML = `
                 <div class="videojuego_imagen">
@@ -27,7 +28,7 @@ function obtenerCookies() {
                 <div class="videojuego_contenido">
                     <h1 class="videojuego-titulo">${producto.titulo}</h1>
                     <p class="videojuego-precio">${producto.precio}</p>
-                    <p class="videojuego-plataforma">Xbox</p>
+                    <p class="videojuego-plataforma">${producto.plataforma}</p>
                     <label for="cantidad" class="videojuego-cantidad">Cantidad</label>
                     <select name="cantidad">
                         <option value="1" selected>1</option>
@@ -40,6 +41,12 @@ function obtenerCookies() {
                         <option value="8">8</option>
                         <option value="9">9</option>
                     </select>
+                    <button 
+                        class="boton-amarillo videojuego-eliminar"
+                        data-id="${producto.id}_${producto.plataforma}"
+                        onclick="eliminarDeLCarrito(this)">
+                        Eliminar del carrito
+                    </button>
                 </div>
             `;
 

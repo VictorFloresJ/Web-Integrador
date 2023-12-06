@@ -14,6 +14,7 @@ if (!$id_videojuego || !$id_plataforma) {
 $query = "SELECT videojuegos.nombre_videojuego AS nombre, 
           videojuegos.imagen_videojuego AS imagen, 
           videojuegos.descripcion AS descripcion, 
+          videojuegos.id AS id, 
           plataformas.nombre_plataforma AS plataforma, 
           inventario.precio AS precio
           FROM inventario
@@ -33,17 +34,17 @@ if (!$videojuego) {
 incluirTemplate('header');
 ?>
 
-<main class="videojuego">
-    <div class="videojuego_imagen">
+<main class="videojuego" id="<?php echo $videojuego['id']; ?>">
+    <div class="producto_imagen">
         <img src="images/<?php echo $videojuego['imagen']; ?>" alt="videojuego imagen">
     </div>
     <div class="videojuego_contenido">
-        <h1 class="videojuego-titulo"><?php echo $videojuego['nombre']; ?></h1>
-        <p class="videojuego-precio">$ <?php echo $videojuego['precio']; ?></p>
-        <p class="videojuego-plataforma_texto"> <?php echo $videojuego['plataforma']; ?></p>
-        <pre class="videojuego-descripcion"><?php echo $videojuego['descripcion'] ?></pre>
-        <button type="submit">
-            <img src="build/img/carrito-plus.svg" alt="icono carrito"> Agregar al carrito
+        <h1 class="producto-titulo"><?php echo $videojuego['nombre']; ?></h1>
+        <p class="precio">$ <?php echo $videojuego['precio']; ?></p>
+        <p class="producto-plataforma"> <?php echo $videojuego['plataforma']; ?></p>
+        <pre class="producto-descripcion"><?php echo $videojuego['descripcion'] ?></pre>
+        <button type="submit" data-id="<?php echo $videojuego['id']; ?>" onclick="agregarAlCarrito(this)">
+            <img src="./build/img/carrito-plus.svg" alt="icono carrito"> Agregar al carrito
         </button>
     </div>
 </main>
@@ -52,5 +53,9 @@ incluirTemplate('header');
 incluirTemplate('footer');
 ?>
 
+<!-- Agregar al carrito  -->
+<script src="build/js/agregarCarrito.js"></script>
+
 </body>
+
 </html>

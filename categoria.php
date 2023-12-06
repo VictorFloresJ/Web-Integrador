@@ -11,7 +11,8 @@ if (!$id_plataforma) {
 $query = "SELECT videojuegos.nombre_videojuego AS nombre, 
           inventario.precio AS precio, 
           videojuegos.imagen_videojuego AS imagen,
-          videojuegos.id AS id
+          videojuegos.id AS id,
+          plataformas.nombre_plataforma AS plataforma
           FROM inventario
           JOIN videojuegos ON inventario.id_videojuego = videojuegos.id
           JOIN plataformas ON inventario.id_plataforma = plataformas.id
@@ -45,6 +46,7 @@ incluirTemplate('filtros');
                         </div><!--.imagen-->
                         <div class="producto_contenido">
                             <p class="producto-titulo"><?php echo $videojuego['nombre']; ?></p>
+                            <p class="producto-plataforma"><?php echo $videojuego['plataforma']; ?></p>
                             <p class="precio">$<?php echo $videojuego['precio']; ?></p>
                             <button type="submit" data-id="<?php echo $videojuego['id']; ?>" onclick="agregarAlCarrito(this)">
                                 <img src="./build/img/carrito-plus.svg" alt="icono carrito"> Agregar al carrito

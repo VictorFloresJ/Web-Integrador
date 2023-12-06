@@ -18,54 +18,54 @@
         grid-template-columns: 1fr 2fr; 
         align-items: flex-start;
     }
-}
 
-.videojuego_contenido {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-    .videojuego-titulo {
-        margin: 0;
-        color: v.$blanco;
-    }
-    .videojuego-precio {
-        font-size: 2.5rem;
-        color: v.$verde;
-        font-weight: v.$bolder;
-    }
-    .videojuego-plataforma img {
-        width: 5rem;
-        height: auto;
-    }
-    .videojuego-plataforma_texto {
-        font-size: 2.5rem;
-        font-weight: v.$bolder;
-        color: v.$blanco;
-    }
-    .videojuego-descripcion {
-        font-size: 1.8rem;
-        font-family: v.$font;
-        // text-align: justify;
-        line-height: normal;
-        letter-spacing: 1px;
-        color: v.$blanco;
-        white-space: pre-wrap;
-    }
-    img {
-        width: 2rem;
-        filter: invert(100%);
-    }
-    button {
-        font-size: 2rem;
-        background-color: v.$moradoClaro;
-        border: 0;
-        padding: 1rem;
-        border-radius: 2%;
-        color: v.$blanco;
-        cursor: pointer;
-        &:hover {
-            background-color: darken(v.$moradoClaro, 5);
+    .videojuego_contenido {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        .producto-titulo {
+            margin: 0;
+            color: v.$blanco;
         }
-        width: max-content;
+        .precio {
+            font-size: 2.5rem;
+            color: v.$verde;
+            font-weight: v.$bolder;
+        }
+        img {
+            width: 5rem;
+            height: auto;
+        }
+        .producto-plataforma {
+            font-size: 2.5rem;
+            font-weight: v.$bolder;
+            color: v.$blanco;
+        }
+        .producto-descripcion {
+            font-size: 1.8rem;
+            font-family: v.$font;
+            // text-align: justify;
+            line-height: normal;
+            letter-spacing: 1px;
+            color: v.$blanco;
+            white-space: pre-wrap;
+        }
+        img {
+            width: 2rem;
+            filter: invert(100%);
+        }
+        button {
+            font-size: 2rem;
+            background-color: v.$moradoClaro;
+            border: 0;
+            padding: 1rem;
+            border-radius: 2%;
+            color: v.$blanco;
+            cursor: pointer;
+            &:hover {
+                background-color: darken(v.$moradoClaro, 5);
+            }
+            width: max-content;
+        }
     }
 }
