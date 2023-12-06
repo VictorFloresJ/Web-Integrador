@@ -8,3 +8,19 @@
 .boton-amarillo-block {
     @include m.boton(block, v.$amarillo);
 }
+
+.boton-rojo {
+    @include m.boton(inline-block, v.$rojo);
+}
+
+.boton-rojo-block {
+    @include m.boton(block, v.$rojo);
+}
+
+.boton-verde {
+    @include m.boton(inline-block, v.$verde);
+}
+
+.boton-verde-block {
+    @include m.boton(block, v.$verde);
+}

@@ -1,0 +1,132 @@
+@use 'helpers/variables' as v;
+@use 'helpers/mixins' as m;
+
+.administracion {
+    h1 {
+        text-align: center;
+        color: v.$blanco;
+    }
+    a {
+        width: max-content;
+    }
+}
+
+.administracion .table {
+    margin-top: 4rem;
+    width: 100%;
+    thead {
+        background-color: v.$moradoClaro;
+    }
+    th {
+        user-select: none;
+    }
+    th,
+    tr {
+        font-size: 1.4rem;
+        text-align: left;
+        padding: 1rem 1rem 1rem 1rem;
+    }
+}
+
+.table {
+    tr {
+        color: v.$blanco;
+        // font-weight: v.$bold;
+    }
+    .producto-idVideojuego {
+        width: 10%;
+    }
+    .producto-idPlataforma {
+        width: 10%;
+    }
+    .producto-nombreVideojuego {
+        width: 20%;
+    }
+    .producto-nombrePlataforma {
+        width: 10%;
+    }
+    .producto-cantidad {
+        width: 10%;
+    }
+    .producto-precio {
+        width: 10%;
+    }
+    .producto-acciones {
+        width: 20%;
+        a {
+            text-align: center;
+            display: block;
+            width: 100%;
+            margin-bottom: .5rem;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    #idVideojuego,
+    #idPlataforma,
+    #nombreVideojuego,
+    #nombrePlataforma,
+    #cantidadKeys,
+    #precioPKey {
+        cursor: pointer;
+    }
+}
+
+.administracion_creacion {
+    fieldset {
+        margin: 3rem 0;
+    }
+    h1 {
+        color: v.$blanco;
+        text-align: center;
+    }
+    a {
+        width: max-content;
+        margin-bottom: 2rem;
+    }
+    legend {
+        color: v.$amarillo;
+        font-weight: v.$bold;
+    }
+    label {
+        color: v.$blanco;
+    }
+    .campo {
+        display: block;
+        margin-bottom: 2rem;
+    }
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    input:not([type="submit"]),
+    textarea {
+        width: 100%;
+        color: v.$negro;
+        border: none;
+        padding: 1rem;
+    }
+    textarea {
+        resize: none;
+        height: 15rem;
+    }
+    input[type="file"] {
+        padding: 0;
+        color: v.$blanco;
+    }
+    .campo p {
+        color: v.$blanco;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+    input[type="checkbox"] {
+        display: inline;
+        width: auto;
+        margin-bottom: 1rem;
+    }
+    input[type="submit"] {
+        width: max-content;
+    }
+}

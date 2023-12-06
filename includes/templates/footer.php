@@ -36,7 +36,7 @@
 </footer><!--.footer-->
 
 <!-- Modernizr  -->
-<script src="build/js/modernizr.js"></script>
+<script src="./build/js/modernizr.js"></script>
 <!-- Iconos -->
 <script src="https://kit.fontawesome.com/8951c38389.js" crossorigin="anonymous"></script>
 
