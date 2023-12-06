@@ -10,11 +10,13 @@
     font-size: 1.5rem;
     font-weight: bold;
     padding: 2rem;
-
+    
     &.error {
         background-color: v.$rojo;
+        color: v.$blanco;
     }
     &.exito {
         background-color: v.$verde;
+        color: v.$blanco;
     }
 }

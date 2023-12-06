@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . '/includes/app.php';
 
+$mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : null ;
+
 $query = "SELECT inventario.id_videojuego AS idVideojuego,
           videojuegos.nombre_videojuego AS nombreVideojuego,
           inventario.id_plataforma AS idPlataforma,
@@ -18,6 +20,13 @@ incluirTemplate('header');
 ?>
 
 <main class="administracion contenedor">
+
+    <?php if ($mensaje == '1') : ?>
+        <div class="alerta error"> <?php echo 'ERROR: No se pudo generar la KEY. Si el error persiste contacte a soporte'; ?> </div>
+    <?php elseif ($mensaje == '2') : ?>
+        <div class="alerta exito"> <?php echo 'KEY generada correctamente'; ?> </div>
+    <?php endif; ?>
+
     <h1>Bienvenido al panel de Administración</h1>
 
     <a href="crear.php" class="boton-verde">Agregar videojuego</a>
@@ -44,8 +53,9 @@ incluirTemplate('header');
                     <td class="producto-cantidad"><?php echo $producto['cantidad']; ?></td>
                     <td class="producto-precio"><?php echo $producto['precio']; ?></td>
                     <td class="producto-acciones">
-                        <a href="modificar.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>&idPlataforma=<?php echo $producto['idPlataforma'];?>" class="boton-amarillo">Modificar registro</a>
+                        <a href="modificar.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>" class="boton-amarillo">Modificar registro</a>
                         <a href="eliminar.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>&idPlataforma=<?php echo $producto['idPlataforma'];?>" class="boton-rojo">Eliminar registro</a>
+                        <a href="generar_key.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>&idPlataforma=<?php echo $producto['idPlataforma'];?>" class="boton-verde">Generar Key</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
