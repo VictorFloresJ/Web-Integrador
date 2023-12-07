@@ -3,7 +3,7 @@ require __DIR__ . '/includes/app.php';
 
 esAdmin();
 
-$mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : null ;
+$mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : null;
 
 $query = "SELECT inventario.id_videojuego AS idVideojuego,
           videojuegos.nombre_videojuego AS nombreVideojuego,
@@ -38,7 +38,6 @@ incluirTemplate('header');
     <h1>Bienvenido al panel de Administración</h1>
 
     <a href="crear.php" class="boton-verde">Agregar videojuego</a>
-
     <table class="table">
         <thead>
             <tr>
@@ -51,9 +50,12 @@ incluirTemplate('header');
                 <th id="acciones">Acciones</th>
             </tr>
         </thead>
-        <tbody>
-            <?php while ($producto = mysqli_fetch_assoc($result)) : ?>
-                <tr>
+        <tbody id="elementosMostrados">
+            <?php
+            $contador = 0;
+            while ($producto = mysqli_fetch_assoc($result)) :
+            ?>
+                <tr class="producto <?php if ($contador >= 15) echo 'oculto'; ?>">
                     <td class="producto-idVideojuego"><?php echo $producto['idVideojuego']; ?></td>
                     <td class="producto-idPlataforma"><?php echo $producto['idPlataforma']; ?></td>
                     <td class="producto-nombreVideojuego"><?php echo $producto['nombreVideojuego']; ?></td>
@@ -62,15 +64,59 @@ incluirTemplate('header');
                     <td class="producto-precio"><?php echo $producto['precio']; ?></td>
                     <td class="producto-acciones">
                         <a href="modificar.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>" class="boton-amarillo">Modificar registro</a>
-                        <a href="eliminar.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>&idPlataforma=<?php echo $producto['idPlataforma'];?>" class="boton-rojo">Eliminar registro</a>
-                        <a href="generar_key.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>&idPlataforma=<?php echo $producto['idPlataforma'];?>" class="boton-verde">Generar Key</a>
+                        <a href="eliminar.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>&idPlataforma=<?php echo $producto['idPlataforma']; ?>" class="boton-rojo">Eliminar registro</a>
+                        <a href="generar_key.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>&idPlataforma=<?php echo $producto['idPlataforma']; ?>" class="boton-verde">Generar Key</a>
                     </td>
                 </tr>
-            <?php endwhile; ?>
+            <?php
+                $contador++;
+            endwhile;
+            ?>
         </tbody>
     </table>
 
+    <button id="verMasBtn" class="boton-verde">Ver más</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mostrarCantidad = 15;
+            const elementosMostrados = document.getElementById('elementosMostrados');
+            const verMasBtn = document.getElementById('verMasBtn');
+
+            let elementosTotales = <?php echo mysqli_num_rows($result); ?>;
+            let elementosActuales = mostrarCantidad;
+
+            verMasBtn.addEventListener('click', function() {
+                const elementos = document.querySelectorAll('.producto');
+                let elementosVisibles = document.querySelectorAll('.producto:not(.oculto)').length;
+                const siguienteElementos = elementosVisibles + mostrarCantidad;
+
+                for (let i = elementosVisibles; i < siguienteElementos && i < elementosTotales; i++) {
+                    elementos[i].classList.remove('oculto');
+                }
+
+                if (elementosVisibles >= elementosTotales) {
+                    verMasBtn.style.display = 'none'; 
+                }
+            });
+        });
+    </script>
+
 </main>
+
+<style>
+    .oculto {
+        display: none;
+    }
+
+    .producto {
+        transition: none;
+    }
+    
+    .producto:hover {
+        transform: none;
+    }
+</style>
 
 <?php
 $db->close();
