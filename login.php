@@ -1,3 +1,40 @@
+<?php 
+require __DIR__ . '/includes/app.php';
+
+$errores = [];
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $email = ($_POST['email']) ? mysqli_real_escape_string($db, filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) : null;
+    $password = ($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : null;
+
+    $errores[] = (!$email) ? 'E-Mail inválido' : null;
+    $errores[] = (!$password) ? 'Contraseña inválida' : null;
+
+    $errores = array_filter($errores);
+    if(empty($errores)) {
+        $query = "SELECT usuarios.nombre_usuario AS nombreUsuario,
+                  usuarios.email AS email,
+                  usuarios.password AS password,
+                  usuarios.admin AS privilegios
+                  FROM usuarios
+                  WHERE usuarios.email = '$email' AND usuarios.password = '$password'";
+        
+        $resultado = $db->query($query);
+
+        if (mysqli_num_rows($resultado) == 1) {
+            $auth = mysqli_fetch_assoc($resultado);
+
+            session_start();
+            $_SESSION['usuario'] = $auth['nombreUsuario'];
+            $_SESSION['login'] = true;
+            $_SESSION['admin'] = ($auth['privilegios'] == '1') ? true : false;
+
+            header('Location: ' . $GLOBALS['raiz_sitio'] . 'panel_administracion.php');
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +63,7 @@
                 </p>
             </div><!--.login_bienvenida-->
             <div class="login_formulario">
-                <form action="/" class="formulario">
+                <form class="formulario" method="POST">
                     <fieldset class="informacion">
                         <legend>Iniciar sesión</legend>
     
@@ -34,7 +71,7 @@
                             <label for="email">E-Mail</label>
                             <input type="email" name="email" id="email" placeholder="Ingresa tu E-Mail">
                         </div>
-    
+
                         <div class="campo">
                             <label for="password">Contraseña</label>
                             <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">

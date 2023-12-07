@@ -1,3 +1,12 @@
+<?php 
+if (!isset($_SESSION)){
+    session_start();
+}
+
+$autenticado = $_SESSION['login'] ?? false;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,11 +25,15 @@
             <img loading="lazy" src="./build/img/logo.png" alt="logo">
         </a>
         <div class="header-derecha">
-            <a href="login.php">
+            <a href="<?php echo (!$autenticado) ? 'login.php' : 'usuario.php'; ?>">
                 <div class="usuario-icono">
                     <i class="fa-solid fa-user"></i>
                 </div>
-                <p>Iniciar sesión</p>
+                <?php if (!$autenticado) : ?>
+                    <p>Iniciar sesión</p>
+                <?php else : ?>
+                    <p>Hola, <?php echo $_SESSION['usuario']; ?></p>
+                <?php endif ?>
             </a>
             <a href="carrito.php" class="carrito-icono">
                 <i class="fa-solid fa-cart-shopping"></i>

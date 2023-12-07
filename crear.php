@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . '/includes/app.php';
 
+esAdmin();
+
 $nombre_videojuego = '';
 $descripcion = '';
 $plataforma_xbox = '';

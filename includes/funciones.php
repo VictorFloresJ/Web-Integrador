@@ -13,4 +13,20 @@ function debug($obj) : void {
     exit;
 }
 
+function esAdmin(): void
+{
+    session_start();
+    if (!$_SESSION["admin"]) {
+        header("Location: " . $GLOBALS['raiz_sitio']);
+    }
+}
+
+
+function estaAutenticado(): void
+{
+    session_start();
+    if (!$_SESSION["login"]) {
+        header("Location: /");
+    }
+}
 ?>

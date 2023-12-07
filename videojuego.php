@@ -5,7 +5,6 @@ $id_videojuego = filter_var($_GET["id_videojuego"], FILTER_VALIDATE_INT);
 $id_plataforma = filter_var($_GET["id_plataforma"], FILTER_VALIDATE_INT);
 
 
-
 if (!$id_videojuego || !$id_plataforma) {
     header('Location: ' . $GLOBALS['raiz_sitio']);
     exit();

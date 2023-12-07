@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . '/includes/app.php';
 
+esAdmin();
+
 $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : null ;
 
 $query = "SELECT inventario.id_videojuego AS idVideojuego,
@@ -22,13 +24,15 @@ incluirTemplate('header');
 <main class="administracion contenedor">
 
     <?php if ($mensaje == '1') : ?>
-        <div class="alerta error"> <?php echo 'ERROR: No se pudo generar la KEY. Si el error persiste contacte a soporte'; ?> </div>
+        <div class="alerta error"> <?php echo 'ERROR EN LA BASE DE DATOS. Si el error persiste contacte a soporte'; ?> </div>
     <?php elseif ($mensaje == '2') : ?>
         <div class="alerta exito"> <?php echo 'KEY generada correctamente'; ?> </div>
     <?php elseif ($mensaje == '3') : ?>
-        <div class="alerta exito"> <?php echo 'Registro actualizado correctamente'; ?> </div>
+        <div class="alerta exito"> <?php echo 'Inventario actualizado correctamente'; ?> </div>
     <?php elseif ($mensaje == '4') : ?>
-        <div class="alerta exito"> <?php echo 'Registro generado correctamente'; ?> </div>
+        <div class="alerta exito"> <?php echo 'Producto generado correctamente'; ?> </div>
+    <?php elseif ($mensaje == '5') : ?>
+        <div class="alerta exito"> <?php echo 'Producto (y sus Keys) eliminado correctamente'; ?> </div>
     <?php endif; ?>
 
     <h1>Bienvenido al panel de Administración</h1>
