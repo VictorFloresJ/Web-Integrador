@@ -18,7 +18,7 @@ try {
                WHERE inventario.id_videojuego = $id_videojuego
                AND inventario.id_plataforma = $id_plataforma";
     $result1 = $db->query($query1);
-
+    
     $query2 = "DELETE FROM `keys`
                WHERE `keys`.id_videojuego = $id_videojuego
                AND `keys`.id_plataforma = $id_plataforma";
