@@ -41,3 +41,30 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
+
+.seleccionado {
+    position: relative;
+    input {
+        pointer-events: none;
+        user-select: none;
+    }
+    input[type='checkbox'] {
+        opacity: 0;
+    }
+    label {
+        display: block;
+    }
+    user-select: none;
+}
+
+.seleccionado::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.4); /* Gris semi-transparente */
+    pointer-events: none; /* Evita que la capa bloquea los eventos del ratón */
+    z-index: 1; /* Coloca la capa encima del contenido */
+}

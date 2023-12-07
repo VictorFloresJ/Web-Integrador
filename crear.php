@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = $db->query($query);
         
         if ($result) {
-            header('Location: ' . $GLOBALS['raiz_sitio'] . 'panel_administracion.php');
+            header('Location: ' . $GLOBALS['raiz_sitio'] . 'panel_administracion.php?mensaje=4');
             exit();
         }
         

@@ -25,6 +25,10 @@ incluirTemplate('header');
         <div class="alerta error"> <?php echo 'ERROR: No se pudo generar la KEY. Si el error persiste contacte a soporte'; ?> </div>
     <?php elseif ($mensaje == '2') : ?>
         <div class="alerta exito"> <?php echo 'KEY generada correctamente'; ?> </div>
+    <?php elseif ($mensaje == '3') : ?>
+        <div class="alerta exito"> <?php echo 'Registro actualizado correctamente'; ?> </div>
+    <?php elseif ($mensaje == '4') : ?>
+        <div class="alerta exito"> <?php echo 'Registro generado correctamente'; ?> </div>
     <?php endif; ?>
 
     <h1>Bienvenido al panel de Administración</h1>
