@@ -20,6 +20,8 @@ incluirTemplate('header');
     <?php endif; ?>
 
     <div class="usuario">
+        <a href="logout.php" class="boton-verde">Cierra sesión</a>
+        <br>
         <?php if ($esAdmin) : ?>
             <a href="panel_administracion.php" class="boton-verde">Visita el panel de administración</a>
         <?php endif; ?>

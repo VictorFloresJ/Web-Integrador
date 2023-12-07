@@ -22,6 +22,9 @@ incluirTemplate('header');
 ?>
 
 <main class="administracion contenedor">
+    <div class="ocultar" id="elementosTotales">
+        <?php echo mysqli_num_rows($result);?>
+    </div>
 
     <?php if ($mensaje == '1') : ?>
         <div class="alerta error"> <?php echo 'ERROR EN LA BASE DE DATOS. Si el error persiste contacte a soporte'; ?> </div>
@@ -55,7 +58,7 @@ incluirTemplate('header');
             $contador = 0;
             while ($producto = mysqli_fetch_assoc($result)) :
             ?>
-                <tr class="producto <?php if ($contador >= 15) echo 'oculto'; ?>">
+                <tr class="producto producto-ocultar <?php if ($contador >= 15) echo 'oculto ocultar'; ?>">
                     <td class="producto-idVideojuego"><?php echo $producto['idVideojuego']; ?></td>
                     <td class="producto-idPlataforma"><?php echo $producto['idPlataforma']; ?></td>
                     <td class="producto-nombreVideojuego"><?php echo $producto['nombreVideojuego']; ?></td>
@@ -77,52 +80,13 @@ incluirTemplate('header');
 
     <button id="verMasBtn" class="boton-verde">Ver más</button>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const mostrarCantidad = 15;
-            const elementosMostrados = document.getElementById('elementosMostrados');
-            const verMasBtn = document.getElementById('verMasBtn');
-
-            let elementosTotales = <?php echo mysqli_num_rows($result); ?>;
-            let elementosActuales = mostrarCantidad;
-
-            verMasBtn.addEventListener('click', function() {
-                const elementos = document.querySelectorAll('.producto');
-                let elementosVisibles = document.querySelectorAll('.producto:not(.oculto)').length;
-                const siguienteElementos = elementosVisibles + mostrarCantidad;
-
-                for (let i = elementosVisibles; i < siguienteElementos && i < elementosTotales; i++) {
-                    elementos[i].classList.remove('oculto');
-                }
-
-                if (elementosVisibles >= elementosTotales) {
-                    verMasBtn.style.display = 'none'; 
-                }
-            });
-        });
-    </script>
-
 </main>
-
-<style>
-    .oculto {
-        display: none;
-    }
-
-    .producto {
-        transition: none;
-    }
-    
-    .producto:hover {
-        transform: none;
-    }
-</style>
-
 <?php
 $db->close();
 incluirTemplate('footer');
 ?>
-
+<!-- Listado dinámico  -->
+<script src="build/js/listadoDinamico.js"></script>
 </body>
 
 </html>

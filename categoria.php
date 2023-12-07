@@ -41,9 +41,9 @@ incluirTemplate('filtros');
                 <?php $j = 0; ?>
                 <?php while ($j < 20 && $videojuego = mysqli_fetch_assoc($resultado)) : ?>
                     <div class="producto" id="<?php echo $videojuego['id']; ?>">
-                        <div class="producto_imagen">
+                        <a class="producto_imagen" href="videojuego.php?id_videojuego=<?php echo $videojuego['id']; ?>&&id_plataforma=<?php echo $id_plataforma; ?>">
                             <img src="images/<?php echo $videojuego['imagen']; ?>" alt="imagen producto" loading="lazy">
-                        </div><!--.imagen-->
+                        </a><!--.imagen-->
                         <div class="producto_contenido">
                             <p class="producto-titulo"><?php echo $videojuego['nombre']; ?></p>
                             <p class="producto-plataforma"><?php echo $videojuego['plataforma']; ?></p>

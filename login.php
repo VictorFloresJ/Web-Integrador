@@ -1,8 +1,8 @@
-<?php 
+<?php
 require __DIR__ . '/includes/app.php';
 
 $errores = [];
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $email = ($_POST['email']) ? mysqli_real_escape_string($db, filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) : null;
     $password = ($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : null;
@@ -11,27 +11,33 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errores[] = (!$password) ? 'Contraseña inválida' : null;
 
     $errores = array_filter($errores);
-    if(empty($errores)) {
+    if (empty($errores)) {
         $query = "SELECT usuarios.nombre_usuario AS nombreUsuario,
                   usuarios.email AS email,
                   usuarios.password AS password,
                   usuarios.id AS id,
                   usuarios.admin AS privilegios
                   FROM usuarios
-                  WHERE usuarios.email = '$email' AND usuarios.password = '$password'";
-        
+                  WHERE usuarios.email = '$email'";
+
         $resultado = $db->query($query);
 
-        if (mysqli_num_rows($resultado) == 1) {
+        if ($resultado->num_rows === 1) {
             $auth = mysqli_fetch_assoc($resultado);
-
-            session_start();
-            $_SESSION['usuario'] = $auth['nombreUsuario'];
-            $_SESSION['id'] = $auth['id'];
-            $_SESSION['login'] = true;
-            $_SESSION['admin'] = ($auth['privilegios'] == '1') ? true : false;
-
-            header('Location: ' . $GLOBALS['raiz_sitio'] . 'panel_administracion.php');
+            
+            if ($auth['password'] === $password) {
+                session_start();
+                $_SESSION['usuario'] = $auth['nombreUsuario'];
+                $_SESSION['id'] = $auth['id'];
+                $_SESSION['login'] = true;
+                $_SESSION['admin'] = ($auth['privilegios'] == '1') ? true : false;
+    
+                header('Location: ' . $GLOBALS['raiz_sitio'] . 'panel_administracion.php');
+            } else {
+                $errores[] = 'Contraseña incorrecta';
+            }
+        } else {
+            $errores[] = 'Usuario no existe';
         }
     }
 }
@@ -68,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form class="formulario" method="POST">
                     <fieldset class="informacion">
                         <legend>Iniciar sesión</legend>
-    
+
                         <div class="campo">
                             <label for="email">E-Mail</label>
                             <input type="email" name="email" id="email" placeholder="Ingresa tu E-Mail">
@@ -78,10 +84,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <label for="password">Contraseña</label>
                             <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
                         </div>
-    
+
                         <input type="submit" value="Iniciar sesión" class="boton-amarillo-block">
                     </fieldset>
                 </form><!--.formulario-->
+                <?php foreach ($errores as $error) : ?>
+                    <div class="alerta error">
+                        <?php echo $error; ?>
+                    </div>
+                <?php endforeach; ?>
             </div><!--.login_formulario-->
         </main><!--.login-->
     </div>

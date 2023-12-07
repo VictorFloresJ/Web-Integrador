@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",(function(){document.getElementById("elementosMostrados");const e=document.getElementById("verMasBtn");let t=parseInt(document.getElementById("elementosTotales").textContent);e.addEventListener("click",(function(){const n=document.querySelectorAll(".producto-ocultar");let o=document.querySelectorAll(".producto:not(.ocultar)").length;const l=o+15;for(let e=o;e<l&&e<t;e++)n[e].classList.remove("ocultar");o>=t&&(e.style.display="none")}))}));
+//# sourceMappingURL=listadoDinamico.js.map

@@ -3,7 +3,7 @@
 $GLOBALS['servidor'] = 'localhost';
 $GLOBALS['usuario'] = 'root';
 $GLOBALS['contrasena'] = '';
-$GLOBALS['base_datos'] = 'piratekeys';
+$GLOBALS['base_datos'] = 'test';
 
 $GLOBALS['raiz_sitio'] = 'http://localhost/piratekeys/';
 

@@ -102,7 +102,11 @@ incluirTemplate('header');
                 <label for="cvv-tarjeta">CVV</label>
                 <input type="text" name="cvv" id="cvv-tarjeta" maxlength="4">
             </div>
-            <input type="submit" value="Proceder al pago" class="boton-amarillo">
+            <?php if (isset($_SESSION['login'])) : ?>
+                <input type="submit" value="Proceder al pago" class="boton-amarillo">
+            <?php else : ?>
+                <a class="boton-rojo txt-center txt-negritas" href="login.php">Para proceder al pago, inicia sesión</a>
+            <?php endif; ?>
         </fieldset>
     </form>
 
