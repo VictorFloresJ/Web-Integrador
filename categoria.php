@@ -16,7 +16,7 @@ $query = "SELECT videojuegos.nombre_videojuego AS nombre,
           FROM inventario
           JOIN videojuegos ON inventario.id_videojuego = videojuegos.id
           JOIN plataformas ON inventario.id_plataforma = plataformas.id
-          WHERE plataformas.id = $id_plataforma";
+          WHERE plataformas.id = $id_plataforma AND inventario.cantidad > 0";
 
 $resultado = $db->query($query);
 

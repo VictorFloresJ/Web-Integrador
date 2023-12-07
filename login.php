@@ -15,6 +15,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query = "SELECT usuarios.nombre_usuario AS nombreUsuario,
                   usuarios.email AS email,
                   usuarios.password AS password,
+                  usuarios.id AS id,
                   usuarios.admin AS privilegios
                   FROM usuarios
                   WHERE usuarios.email = '$email' AND usuarios.password = '$password'";
@@ -26,6 +27,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             session_start();
             $_SESSION['usuario'] = $auth['nombreUsuario'];
+            $_SESSION['id'] = $auth['id'];
             $_SESSION['login'] = true;
             $_SESSION['admin'] = ($auth['privilegios'] == '1') ? true : false;
 

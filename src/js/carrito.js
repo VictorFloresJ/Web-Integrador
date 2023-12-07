@@ -29,8 +29,8 @@ function obtenerCookies() {
                     <h1 class="videojuego-titulo">${producto.titulo}</h1>
                     <p class="videojuego-precio">${producto.precio}</p>
                     <p class="videojuego-plataforma">${producto.plataforma}</p>
-                    <label for="cantidad" class="videojuego-cantidad">Cantidad</label>
-                    <select name="cantidad">
+                    <label for="cantidad_${producto.id}_${producto.plataforma}" class="videojuego-cantidad">Cantidad</label>
+                    <select name="cantidad_${producto.id}_${producto.plataforma}">
                         <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
