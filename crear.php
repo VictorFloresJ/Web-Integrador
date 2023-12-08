@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (strlen($descripcion) < 50) {
         $errores[] = 'La descripción del videojuego debe tener al menos 50 caracteres';
     }
-    if (!isset($_POST['plataforma_xbox']) && !isset($_POST['plataforma_xbox']) && !isset($_POST['plataforma_xbox']) && !isset($_POST['plataforma_xbox'])) {
+    if (!isset($_POST['plataforma_xbox']) && !isset($_POST['plataforma_playstation']) && !isset($_POST['plataforma_nintendo']) && !isset($_POST['plataforma_pc'])) {
         $errores[] = 'Debes seleccionar al menos una plataforma';
     }
 
@@ -166,9 +166,7 @@ incluirTemplate('header');
             </div>
             <div class="campo">
                 <label for="descripcion">Descripcion</label>
-                <textarea name="descripcion" id="descripcion">
-                    <?php echo $descripcion; ?>
-                </textarea>
+                <textarea name="descripcion" id="descripcion">  <?php echo $descripcion; ?></textarea>
             </div>
             <div class="campo">
                 <label for="imagen">Imagen</label>

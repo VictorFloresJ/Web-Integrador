@@ -29,23 +29,23 @@
     user-select: none;
 }
 
-.filtros_herramienta:last-of-type {
-    border: 1px solid v.$moradoClaro;
-    width: max-content;
-    input {
-        background-color: v.$morado;
-        color: v.$blanco;
-        padding: 1rem 2rem;
-        border: 0;
-    }
-    button {
-        width: 4.5rem;
-        height: 4.5rem;
-        background-color: v.$morado;
-        border: 0;
-        color: v.$blanco;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
+// .filtros_herramienta:last-of-type {
+//     border: 1px solid v.$moradoClaro;
+//     width: max-content;
+//     input {
+//         background-color: v.$morado;
+//         color: v.$blanco;
+//         padding: 1rem 2rem;
+//         border: 0;
+//     }
+//     button {
+//         width: 4.5rem;
+//         height: 4.5rem;
+//         background-color: v.$morado;
+//         border: 0;
+//         color: v.$blanco;
+//         &:hover {
+//             cursor: pointer;
+//         }
+//     }
+// }

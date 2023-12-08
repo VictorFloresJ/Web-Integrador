@@ -10,12 +10,13 @@ function obtenerCookies() {
     cookies.forEach(function (cookie) {
 
         let [nombre, valor] = cookie.split('=');
-
         nombre = nombre.trim();
 
         if (nombre.startsWith('producto_')) {
 
             const producto = JSON.parse(decodeURIComponent(valor));
+
+            console.table(producto);
 
             const productoElemento = document.createElement('div');
             productoElemento.classList.add('compras_videojuego', 'entrar-izquierda');

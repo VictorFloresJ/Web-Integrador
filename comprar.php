@@ -84,7 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['aux'])) {
                 $fechaCompra = date("Y-m-d H:i:s");
                 $idVideojuegoActual = $productoActual['idVideojuego'];
                 $idPlataformaActual = $productoActual['idPlataforma'];
-
                 $precioUnitario = $productoActual['precio'];
                 $cantidad = $productosSolicitatos[$productoActual['idVideojuego'] . '-' . $productoActual['idPlataforma']];
 
@@ -94,8 +93,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['aux'])) {
                 foreach($claves as $clave) {
                     $ordenCompra = md5(uniqid(rand(), true));
  
-                    $query = "INSERT INTO compras (id_usuario, clave_compra, id_videojuego, id_plataforma, tarjeta, total, fecha_compra, clave) 
-                              VALUES ('$usuario', '$ordenCompra', '$idVideojuegoActual', '$idPlataformaActual', '$numeroTarjeta', '$total', '$fechaCompra', '$clave')";
+                    $query = "INSERT INTO compras (id_usuario, clave_compra, id_videojuego, id_plataforma, tarjeta, total, fecha_compra, clave, precio) 
+                              VALUES ('$usuario', '$ordenCompra', '$idVideojuegoActual', '$idPlataformaActual', '$numeroTarjeta', '$total', '$fechaCompra', '$clave', '$precioUnitario')";
                     $db->query($query);
                     
                     $query = "DELETE FROM `keys` WHERE `keys`.clave = '$clave'";
@@ -139,6 +138,7 @@ incluirTemplate('header');
     <?php endforeach; ?>
 
     <div class="totales">
+        <?php $totales = 0;?>
         <p id="mensaje1">Antes de confirmar la compra, por favor revisa el total de tu pedido</p>
         <?php foreach ($productos as $productoActual) : ?>
             <div class="total-producto">
@@ -152,13 +152,16 @@ incluirTemplate('header');
                 <?php
                 $precioUnitario = $productoActual['precio'];
                 $cantidad = $productosSolicitatos[$productoActual['idVideojuego'] . '-' . $productoActual['idPlataforma']];
-
+                
                 $total = floatval($precioUnitario) * floatval($cantidad);
+                $totales = $totales + $total;
                 ?>
                 <p><?php echo $total; ?></p>
-
             </div>
         <?php endforeach; ?>
+        <div class="total-producto">
+            <p class="txt-negritas">Total de la compra: <?php echo $totales; ?></p>
+        </div>
         <p>Te recordamos que los pedidos están sujetos a existencias, por lo que en caso de no contar con todo lo que solicitas, la transacción no se completará</p>
     </div>
 

@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
-
+    
     $errores[] = empty($productosSolicitatos) ? 'No se puede continuar con el proceso de compra si no se tienen productos en el carrito' : null;
 
     $errores = array_filter($errores);

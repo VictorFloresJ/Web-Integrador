@@ -130,7 +130,11 @@ incluirTemplate('header');
             while ($producto = mysqli_fetch_assoc($result)) :
             ?>
                 <tr class="producto producto-ocultar <?php if ($contador >= 15) echo 'oculto ocultar'; ?>">
-                    <td class="producto-idVideojuego"><?php echo $producto['idVideojuego']; ?></td>
+                    <td class="producto-idVideojuego">
+                        <a class="txt-negritas txt-verde" href="videojuego.php?id_videojuego=<?php echo $producto['idVideojuego']?>&&id_plataforma=<?php echo $producto['idPlataforma']?>" target="_blank">
+                            <?php echo $producto['idVideojuego']; ?>
+                        </a>
+                    </td>
                     <td class="producto-idPlataforma"><?php echo $producto['idPlataforma']; ?></td>
                     <td class="producto-nombreVideojuego"><?php echo $producto['nombreVideojuego']; ?></td>
                     <td class="producto-nombrePlataforma"><?php echo $producto['nombrePlataforma']; ?></td>
