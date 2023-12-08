@@ -214,7 +214,7 @@ incluirTemplate('header');
                     <input type="checkbox" name="plataforma_xbox" id="plataforma_xbox" <?php echo isset($plataforma_xbox_aux) ? 'checked' : ''; ?>> Xbox
                     <div class="campo" id="plataforma_xboxcampo">
                         <label for="inputPrecio">Precio</label>
-                        <input type="number" name="plataforma_xbox_precio" value="<?php echo isset($plataforma_xbox_aux) ? $plataforma_xbox_precio : ''; ?>">
+                        <input type="number" step="0.01" name="plataforma_xbox_precio" value="<?php echo isset($plataforma_xbox_aux) ? $plataforma_xbox_precio : ''; ?>">
                     </div>
                 </label>
 
@@ -222,7 +222,7 @@ incluirTemplate('header');
                     <input type="checkbox" name="plataforma_playstation" id="plataforma_playstation" <?php echo isset($plataforma_playstation_aux) ? 'checked' : ''; ?>> PlayStation
                     <div class="campo" id="plataforma_playstationcampo">
                         <label for="inputPrecio">Precio</label>
-                        <input type="number" name="plataforma_playstation_precio" value="<?php echo isset($plataforma_playstation_aux) ? $plataforma_playstation_precio : ''; ?>">
+                        <input type="number"  step="0.01" name="plataforma_playstation_precio" value="<?php echo isset($plataforma_playstation_aux) ? $plataforma_playstation_precio : ''; ?>">
                     </div>
                 </label>
 
@@ -230,7 +230,7 @@ incluirTemplate('header');
                     <input type="checkbox" name="plataforma_nintendo" id="plataforma_nintendo" <?php echo isset($plataforma_nintendo_aux) ? 'checked' : ''; ?>> Nintendo
                     <div class="campo" id="plataforma_nintendocampo">
                         <label for="inputPrecio">Precio</label>
-                        <input type="number" name="plataforma_nintendo_precio" value="<?php echo isset($plataforma_nintendo_aux) ? $plataforma_nintendo_precio : ''; ?>">
+                        <input type="number" step="0.01" name="plataforma_nintendo_precio" value="<?php echo isset($plataforma_nintendo_aux) ? $plataforma_nintendo_precio : ''; ?>">
                     </div>
                 </label>
 
@@ -238,7 +238,7 @@ incluirTemplate('header');
                     <input type="checkbox" name="plataforma_pc" id="plataforma_pc" <?php echo isset($plataforma_pc_aux) ? 'checked' : ''; ?>> PC
                     <div class="campo" id="plataforma_pccampo">
                         <label for="inputPrecio">Precio</label>
-                        <input type="number" name="plataforma_pc_precio" value="<?php echo isset($plataforma_pc_aux) ? $plataforma_pc_precio : ''; ?>">
+                        <input type="number" step="0.01" name="plataforma_pc_precio" value="<?php echo isset($plataforma_pc_aux) ? $plataforma_pc_precio : ''; ?>">
                     </div>
                 </label>
             </div>

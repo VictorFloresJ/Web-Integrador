@@ -43,6 +43,7 @@ function validarFormulario() {
 
                 const nuevoInputPrecio = document.createElement('input');
                 nuevoInputPrecio.setAttribute('type', 'number');
+                nuevoInputPrecio.setAttribute('step', '0.01');
                 nuevoInputPrecio.setAttribute('id', 'inputPrecio');
                 nuevoInputPrecio.setAttribute('name', nombrePrecio);
 
