@@ -96,7 +96,7 @@ incluirTemplate('header');
             </div>
             <div class="campo">
                 <label for="fecha-tarjeta">Fecha de expiración</label>
-                <input type="month" name="fecha-tarjeta" id="fecha-tarjeta" class="fecha-tarjeta">
+                <input type="text" name="fecha-tarjeta" id="fecha-tarjeta" class="fecha-tarjeta">
             </div>
             <div class="campo">
                 <label for="cvv-tarjeta">CVV</label>
