@@ -209,7 +209,7 @@ incluirTemplate('header');
         <fieldset>
             <legend>Datos para inventario</legend>
             <div class="campo">
-                <p>Plataformas disponibles (No puede eliminar las previamente selecionadas)</p>
+                <p>Plataformas disponibles (No puede modificar las establecidas)</p>
                 <label for="plataforma_xbox" class="plataforma <?php echo isset($plataforma_xbox_aux) ? 'seleccionado' : ''; ?>">
                     <input type="checkbox" name="plataforma_xbox" id="plataforma_xbox" <?php echo isset($plataforma_xbox_aux) ? 'checked' : ''; ?>> Xbox
                     <div class="campo" id="plataforma_xboxcampo">
