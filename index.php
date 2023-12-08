@@ -6,7 +6,7 @@ incluirTemplate('header');
 
 <main class="barra-busqueda fondo-cambiante">
     <h1>Busca tus juegos favoritos</h1>
-    <form method="GET">
+    <form method="GET" action="busqueda.php">
         <input type="text" name="busqueda" placeholder="Ej: Nier Automata">
         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>

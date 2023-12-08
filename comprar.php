@@ -130,6 +130,8 @@ incluirTemplate('header');
 <main class="contenedor compras-contenedor">
     <h1>Continúa con tu proceso de compras aquí</h1>
 
+    <a href="carrito.php" class="boton-verde w-100">Volver</a>
+
     <?php foreach ($errores as $error) : ?>
         <div class="alerta error">
             <?php echo $error; ?>

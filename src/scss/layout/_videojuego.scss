@@ -69,3 +69,26 @@
         }
     }
 }
+
+
+#no-encontro {
+    margin: 5rem auto;
+    padding: 2rem;
+    height: 50rem;
+    i {
+        font-size: 7rem;
+        color: v.$rojo;
+    }
+    h1 {
+        color: v.$blanco;
+    }
+    display: flex;
+    flex-direction: column;
+
+    @include m.tablet {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        column-gap: 3rem;
+    }
+}

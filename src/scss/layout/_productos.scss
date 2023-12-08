@@ -120,3 +120,16 @@
         filter: invert(100%);
     }
 }
+
+
+.ocultar {
+    display: none;
+}
+
+.producto-ocultar {
+    transition: none;
+}
+
+.producto-ocultar:hover {
+    transform: none;
+}

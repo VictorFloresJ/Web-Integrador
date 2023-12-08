@@ -25,28 +25,35 @@ $query = "SELECT videojuegos.nombre_videojuego AS nombre,
 
 $videojuego = mysqli_fetch_assoc($db->query($query));
 
-if (!$videojuego) {
-    header('Location: ' . $GLOBALS['raiz_sitio']);
-    exit();
-}
+// if (!$videojuego) {
+//     header('Location: ' . $GLOBALS['raiz_sitio']);
+//     exit();
+// }
 
 incluirTemplate('header');
 ?>
 
-<main class="videojuego" id="<?php echo $videojuego['id']; ?>">
-    <div class="producto_imagen">
-        <img src="images/<?php echo $videojuego['imagen']; ?>" alt="videojuego imagen">
+<?php if (!$videojuego) : ?>
+    <div id="no-encontro">
+        <i class="fa-solid fa-face-sad-tear"></i>
+        <h1>Lo sentimos, no hemos encontrado nada parecido</h1>
     </div>
-    <div class="videojuego_contenido">
-        <h1 class="producto-titulo"><?php echo $videojuego['nombre']; ?></h1>
-        <p class="precio">$ <?php echo $videojuego['precio']; ?></p>
-        <p class="producto-plataforma"> <?php echo $videojuego['plataforma']; ?></p>
-        <pre class="producto-descripcion"><?php echo $videojuego['descripcion'] ?></pre>
-        <button type="submit" data-id="<?php echo $videojuego['id']; ?>" onclick="agregarAlCarrito(this)">
-            <img src="./build/img/carrito-plus.svg" alt="icono carrito"> Agregar al carrito
-        </button>
-    </div>
-</main>
+<?php else : ?>
+    <main class="videojuego" id="<?php echo $videojuego['id']; ?>">
+        <div class="producto_imagen">
+            <img src="images/<?php echo $videojuego['imagen']; ?>" alt="videojuego imagen">
+        </div>
+        <div class="videojuego_contenido">
+            <h1 class="producto-titulo"><?php echo $videojuego['nombre']; ?></h1>
+            <p class="precio">$ <?php echo $videojuego['precio']; ?></p>
+            <p class="producto-plataforma"> <?php echo $videojuego['plataforma']; ?></p>
+            <pre class="producto-descripcion"><?php echo $videojuego['descripcion'] ?></pre>
+            <button type="submit" data-id="<?php echo $videojuego['id']; ?>" onclick="agregarAlCarrito(this)">
+                <img src="./build/img/carrito-plus.svg" alt="icono carrito"> Agregar al carrito
+            </button>
+        </div>
+    </main>
+<?php endif ?>
 
 <?php
 incluirTemplate('footer');
