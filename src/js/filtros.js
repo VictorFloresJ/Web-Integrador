@@ -36,8 +36,6 @@ function aplicarFiltro(factorPorComparar, flechas) {
 
     productosArray.sort((a, b) => {
         if (factorPorComparar === 'titulo') {
-            const tituloA = a.querySelector('.producto-titulo').textContent.toLowerCase();
-            const tituloB = b.querySelector('.producto-titulo').textContent.toLowerCase();
             return tituloA.localeCompare(tituloB);
         } else {
             const precioA = parseFloat(a.querySelector('.precio').textContent.slice(1));

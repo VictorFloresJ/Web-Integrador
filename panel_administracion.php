@@ -112,16 +112,16 @@ incluirTemplate('header');
         </div>
         <input type="submit" value="Refrescar datos" class="w-100">
     </form>
-    <table class="table">
+    <table class="table" id="miTabla">
         <thead>
             <tr>
-                <th id="idVideojuego">ID videojuego</th>
-                <th id="idPlataforma">ID plataforma</th>
-                <th id="nombreVideojuego">Nombre videojuego</th>
-                <th id="nombrePlataforma">Nombre plataforma</th>
-                <th id="cantidadKeys">Cantidad de keys</th>
-                <th id="precioPKey">Precio p/key</th>
-                <th id="acciones">Acciones</th>
+                <th id="idVideojuego" data-column="0">ID videojuego</th>
+                <th id="idPlataforma" data-column="1">ID plataforma</th>
+                <th id="nombreVideojuego" data-column="2">Nombre videojuego</th>
+                <th id="nombrePlataforma" data-column="3">Nombre plataforma</th>
+                <th id="cantidadKeys" data-column="4">Cantidad de keys</th>
+                <th id="precioPKey" data-column="5">Precio p/key</th>
+                <th id="acciones" data-column="6">Acciones</th>
             </tr>
         </thead>
         <tbody id="elementosMostrados">
