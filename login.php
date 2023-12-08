@@ -4,13 +4,16 @@ require __DIR__ . '/includes/app.php';
 $errores = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $email = ($_POST['email']) ? mysqli_real_escape_string($db, filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) : null;
+
+    $email = ($_POST['email']) ? mysqli_real_escape_string($db, $_POST["email"]) : null;
     $password = ($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : null;
 
     $errores[] = (!$email) ? 'E-Mail inválido' : null;
     $errores[] = (!$password) ? 'Contraseña inválida' : null;
 
+
     $errores = array_filter($errores);
+
     if (empty($errores)) {
         $query = "SELECT usuarios.nombre_usuario AS nombreUsuario,
                   usuarios.email AS email,
@@ -24,14 +27,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($resultado->num_rows === 1) {
             $auth = mysqli_fetch_assoc($resultado);
-            
+
             if ($auth['password'] === $password) {
                 session_start();
                 $_SESSION['usuario'] = $auth['nombreUsuario'];
                 $_SESSION['id'] = $auth['id'];
                 $_SESSION['login'] = true;
                 $_SESSION['admin'] = ($auth['privilegios'] == '1') ? true : false;
-    
+
                 header('Location: ' . $GLOBALS['raiz_sitio'] . 'panel_administracion.php');
             } else {
                 $errores[] = 'Contraseña incorrecta';
@@ -71,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </p>
             </div><!--.login_bienvenida-->
             <div class="login_formulario">
-                <form class="formulario" method="POST">
+                <form class="formulario" method="POST" id="loginForm">
                     <fieldset class="informacion">
                         <legend>Iniciar sesión</legend>
 
@@ -79,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <label for="email">E-Mail</label>
                             <input type="email" name="email" id="email" placeholder="Ingresa tu E-Mail">
                         </div>
-
+                        
                         <div class="campo">
                             <label for="password">Contraseña</label>
                             <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
@@ -99,6 +102,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Modernizr  -->
     <script src="build/js/modernizr.js"></script>
+    <!-- Validacion login  -->
+    <script src="build/js/validacionLogin.js"></script>
     <!-- Iconos -->
     <script src="https://kit.fontawesome.com/8951c38389.js" crossorigin="anonymous"></script>
 </body>

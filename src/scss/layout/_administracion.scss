@@ -9,10 +9,24 @@
     a {
         width: max-content;
     }
+    form {
+        margin-top: 4rem;
+        .campo {
+            display: inline;
+            color: v.$blanco;
+            margin-right: 2rem;
+        }
+        input[type='submit'] {
+            background-color: transparent;
+            color: lighten(v.$moradoClaro, 7);
+            border: none;
+            cursor: pointer;
+            border-bottom: 1px solid lighten(v.$moradoClaro, 7);
+        }
+    }
 }
 
 .administracion .table {
-    margin-top: 4rem;
     width: 100%;
     thead {
         background-color: v.$moradoClaro;

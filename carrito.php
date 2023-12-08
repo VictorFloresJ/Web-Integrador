@@ -125,6 +125,8 @@ incluirTemplate('footer');
 <script src="build/js/carrito.js"></script>
 <!-- Carrito  -->
 <script src="build/js/eliminarDelCarrito.js"></script>
+<!-- Validar compra  -->
+<script src="build/js/validacionCompra.js"></script>
 </body>
 
 </html>
