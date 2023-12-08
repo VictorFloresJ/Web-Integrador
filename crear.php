@@ -54,29 +54,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (isset($_POST['plataforma_xbox']) && isset($_POST['plataforma_xbox_precio'])) {
-        $plataforma_xbox_precio = mysqli_real_escape_string($db, $_POST['plataforma_xbox_precio']);
-        if (!$plataforma_xbox_precio) {
+        $plataforma_xbox_precio = mysqli_real_escape_string($db, filter_var($_POST['plataforma_xbox_precio'], FILTER_VALIDATE_FLOAT));
+        if (!$plataforma_xbox_precio || $plataforma_xbox_precio <= 0) {
             $errores[] = 'Debes agregar el precio de la siguiente plataforma: Xbox';
         }
     }
 
     if (isset($_POST['plataforma_playstation']) && isset($_POST['plataforma_playstation_precio'])) {
-        $plataforma_playstation_precio = mysqli_real_escape_string($db, $_POST['plataforma_playstation_precio']);
-        if (!$plataforma_playstation_precio) {
+        $plataforma_playstation_precio = mysqli_real_escape_string($db, filter_var($_POST['plataforma_playstation_precio'], FILTER_VALIDATE_FLOAT));
+        if (!$plataforma_playstation_precio || $plataforma_playstation_precio <= 0) {
             $errores[] = 'Debes agregar el precio de la siguiente plataforma: PlayStation';
         }
     }
 
     if (isset($_POST['plataforma_nintendo']) && isset($_POST['plataforma_nintendo_precio'])) {
-        $plataforma_nintendo_precio = mysqli_real_escape_string($db, $_POST['plataforma_nintendo_precio']);
-        if (!$plataforma_nintendo_precio) {
+        $plataforma_nintendo_precio = mysqli_real_escape_string($db, filter_var($_POST['plataforma_nintendo_precio'], FILTER_VALIDATE_FLOAT));
+        if (!$plataforma_nintendo_precio || $plataforma_nintendo_precio <= 0) {
             $errores[] = 'Debes agregar el precio de la siguiente plataforma: Nintendo';
         }
     }
 
     if (isset($_POST['plataforma_pc']) && isset($_POST['plataforma_pc_precio'])) {
-        $plataforma_pc_precio = mysqli_real_escape_string($db, $_POST['plataforma_pc_precio']);
-        if (!$plataforma_pc_precio) {
+        $plataforma_pc_precio = mysqli_real_escape_string($db, filter_var($_POST['plataforma_pc_precio'], FILTER_VALIDATE_FLOAT));
+        if (!$plataforma_pc_precio || $plataforma_pc_precio <= 0) {
             $errores[] = 'Debes agregar el precio de la siguiente plataforma: PC';
         }
     }

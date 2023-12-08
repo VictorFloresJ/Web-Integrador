@@ -139,7 +139,11 @@ incluirTemplate('header');
                     <td class="producto-nombreVideojuego"><?php echo $producto['nombreVideojuego']; ?></td>
                     <td class="producto-nombrePlataforma"><?php echo $producto['nombrePlataforma']; ?></td>
                     <td class="producto-cantidad"><?php echo $producto['cantidad']; ?></td>
-                    <td class="producto-precio"><?php echo $producto['precio']; ?></td>
+                    <td class="producto-precio">
+                        <a href="modificarPrecio.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>&idPlataforma=<?php echo $producto['idPlataforma']; ?>" class="txt-verde txt-negritas">
+                            <?php echo $producto['precio']; ?>
+                        </a>
+                    </td>
                     <td class="producto-acciones">
                         <a href="modificar.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>" class="boton-amarillo">Modificar registro</a>
                         <a href="eliminar.php?idVideojuego=<?php echo $producto['idVideojuego']; ?>&idPlataforma=<?php echo $producto['idPlataforma']; ?>" class="boton-rojo">Eliminar registro</a>

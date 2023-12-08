@@ -93,11 +93,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $plataforma_nintendo = (isset($_POST['plataforma_nintendo'])) ? mysqli_real_escape_string($db, $_POST['plataforma_nintendo']) : null;
     $plataforma_pc = (isset($_POST['plataforma_pc'])) ? mysqli_real_escape_string($db, $_POST['plataforma_pc']) : null;
 
-    $plataforma_xbox_precio = (isset($_POST['plataforma_xbox_precio'])) ? mysqli_real_escape_string($db, $_POST['plataforma_xbox_precio']) : null;
-    $plataforma_playstation_precio = (isset($_POST['plataforma_playstation_precio'])) ? mysqli_real_escape_string($db, $_POST['plataforma_playstation_precio']) : null;
-    $plataforma_nintendo_precio = (isset($_POST['plataforma_nintendo_precio'])) ? mysqli_real_escape_string($db, $_POST['plataforma_nintendo_precio']) : null;
-    $plataforma_pc_precio = (isset($_POST['plataforma_pc_precio'])) ? mysqli_real_escape_string($db, $_POST['plataforma_pc_precio']) : null;
-
+    $plataforma_xbox_precio = (isset($_POST['plataforma_xbox_precio'])) ? mysqli_real_escape_string($db, filter_var($_POST['plataforma_xbox_precio'], FILTER_VALIDATE_FLOAT)) : null;
+    $plataforma_playstation_precio = (isset($_POST['plataforma_playstation_precio'])) ? mysqli_real_escape_string($db, filter_var($_POST['plataforma_playstation_precio'], FILTER_VALIDATE_FLOAT)) : null;
+    $plataforma_nintendo_precio = (isset($_POST['plataforma_nintendo_precio'])) ? mysqli_real_escape_string($db, filter_var($_POST['plataforma_nintendo_precio'], FILTER_VALIDATE_FLOAT)) : null;
+    $plataforma_pc_precio = (isset($_POST['plataforma_pc_precio'])) ? mysqli_real_escape_string($db, filter_var($_POST['plataforma_pc_precio'], FILTER_VALIDATE_FLOAT)) : null;
+    
     $errores[] = (!$nombre_videojuego) ? 'Debes agregar el nombre del videojuego' : null;
     $errores[] = (!$descripcion) ? 'Debes agregar la descripción del videojuego' : null;
 
