@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-12-2023 a las 20:45:34
+-- Tiempo de generación: 05-05-2025 a las 08:43:09
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `piratekeys`
+-- Base de datos: `pruebafinal`
 --
 
 -- --------------------------------------------------------
@@ -40,6 +40,23 @@ CREATE TABLE `compras` (
   `precio` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `compras`
+--
+
+INSERT INTO `compras` (`id`, `id_usuario`, `clave_compra`, `id_videojuego`, `id_plataforma`, `tarjeta`, `total`, `fecha_compra`, `clave`, `precio`) VALUES
+(1, 5, '6afad909394c064f63014c5155fe53dc', 6, 3, '1111-2222-3333-4444', 34.85, '2023-12-08', '65697408891f1', 34.85),
+(2, 5, 'a9378ef311ae60ccc244aa3ec0cc7c73', 8, 2, '1111-2222-3333-4444', 39.13, '2023-12-08', '656974088a109', 39.13),
+(3, 5, '66655192409fdb5b71946de7df8fd490', 13, 1, '1111-2222-3333-4444', 32.21, '2023-12-08', '656974088c121', 32.21),
+(4, 5, 'b6b7916c6ac17e4cc2fb895d5c9d9bec', 21, 4, '1111-2222-3333-4444', 30.26, '2023-12-08', '656974088fc03', 30.26),
+(5, 5, '57fe22e4c31156d4d4be414b151aabb1', 27, 3, '1111-2222-3333-4444', 30.79, '2023-12-08', '656974089242e', 30.79),
+(6, 3, '68d931e3a16098175200f0efe7f2fbd6', 1, 1, '0000-1111-2222-3333', 66.76, '2024-11-01', '656973541e269', 66.76),
+(7, 1, 'de9953cecca59081d356252688ee7f3b', 1, 1, '1111-2222-3333-4444', 66.76, '2024-11-03', '6569f70479e65', 66.76),
+(8, 3, '4662a5463d698fd7d45d0051982c172e', 4, 3, '1111-2222-3333-4444', 50.01, '2024-11-30', '65697408880b8', 50.01),
+(9, 3, 'e302f6825a2432c1140a2d117c6903e9', 5, 3, '1111-2222-3333-4444', 71.47, '2024-11-30', '656974088895e', 71.47),
+(10, 1, '6bb4556d87c32d6ed9cbf7a045caa9a8', 5, 1, '1234-1234-1234-1234', 70.61, '2025-01-23', '65697408884ff', 70.61),
+(11, 3, '6f6cf73e582189c96f5e7e6f2a954e90', 1, 1, '1111-2222-3333-4444', 66.76, '2025-01-29', '6569f70483be2', 66.76);
+
 -- --------------------------------------------------------
 
 --
@@ -58,13 +75,10 @@ CREATE TABLE `inventario` (
 --
 
 INSERT INTO `inventario` (`id_videojuego`, `id_plataforma`, `cantidad`, `precio`) VALUES
-(1, 1, 12, 66.76),
+(1, 1, 9, 66.76),
 (1, 2, 1, 71.37),
 (1, 3, 1, 76.55),
 (1, 4, 1, 38.64),
-(2, 1, 1, 33.56),
-(2, 2, 1, 71.88),
-(2, 3, 1, 78.73),
 (2, 4, 1, 48.00),
 (3, 1, 1, 73.79),
 (3, 2, 1, 44.97),
@@ -72,22 +86,22 @@ INSERT INTO `inventario` (`id_videojuego`, `id_plataforma`, `cantidad`, `precio`
 (3, 4, 1, 52.53),
 (4, 1, 1, 62.18),
 (4, 2, 1, 73.31),
-(4, 3, 1, 50.01),
+(4, 3, 0, 50.01),
 (4, 4, 1, 50.13),
-(5, 1, 1, 70.61),
+(5, 1, 0, 70.61),
 (5, 2, 1, 72.66),
-(5, 3, 1, 71.47),
+(5, 3, 0, 71.47),
 (5, 4, 1, 59.39),
 (6, 1, 1, 52.53),
 (6, 2, 1, 54.49),
-(6, 3, 1, 34.85),
+(6, 3, 0, 34.85),
 (6, 4, 1, 30.80),
 (7, 1, 1, 69.42),
 (7, 2, 1, 74.73),
 (7, 3, 1, 35.38),
 (7, 4, 1, 72.72),
 (8, 1, 1, 77.46),
-(8, 2, 1, 39.13),
+(8, 2, 0, 39.13),
 (8, 3, 1, 33.27),
 (8, 4, 1, 68.96),
 (9, 1, 1, 64.98),
@@ -106,7 +120,7 @@ INSERT INTO `inventario` (`id_videojuego`, `id_plataforma`, `cantidad`, `precio`
 (12, 2, 1, 39.55),
 (12, 3, 1, 54.79),
 (12, 4, 1, 75.32),
-(13, 1, 1, 32.21),
+(13, 1, 0, 32.21),
 (13, 2, 1, 55.10),
 (13, 3, 1, 48.85),
 (13, 4, 1, 48.97),
@@ -141,7 +155,7 @@ INSERT INTO `inventario` (`id_videojuego`, `id_plataforma`, `cantidad`, `precio`
 (21, 1, 1, 74.01),
 (21, 2, 1, 60.02),
 (21, 3, 1, 48.06),
-(21, 4, 1, 30.26),
+(21, 4, 0, 30.26),
 (22, 1, 1, 77.10),
 (22, 2, 1, 64.74),
 (22, 3, 1, 62.38),
@@ -164,7 +178,7 @@ INSERT INTO `inventario` (`id_videojuego`, `id_plataforma`, `cantidad`, `precio`
 (26, 4, 1, 65.00),
 (27, 1, 1, 33.44),
 (27, 2, 1, 42.22),
-(27, 3, 1, 30.79),
+(27, 3, 0, 30.79),
 (27, 4, 1, 47.26),
 (28, 1, 1, 63.94),
 (28, 2, 1, 47.91),
@@ -181,7 +195,12 @@ INSERT INTO `inventario` (`id_videojuego`, `id_plataforma`, `cantidad`, `precio`
 (31, 1, 1, 69.32),
 (31, 2, 1, 35.11),
 (31, 3, 1, 37.60),
-(31, 4, 1, 52.65);
+(31, 4, 1, 52.65),
+(32, 2, 0, 10.99),
+(32, 3, 0, 10.99),
+(33, 3, 0, 39.92),
+(34, 3, 0, 19.90),
+(35, 1, 0, 273.10);
 
 -- --------------------------------------------------------
 
@@ -201,13 +220,9 @@ CREATE TABLE `keys` (
 --
 
 INSERT INTO `keys` (`id`, `clave`, `id_videojuego`, `id_plataforma`) VALUES
-(24, '656973541e269', 1, 1),
 (25, '6569735a1c780', 1, 2),
 (26, '6569735de0064', 1, 3),
 (27, '6569736178412', 1, 4),
-(28, '656974088651c', 2, 1),
-(29, '656974088685d', 2, 2),
-(30, '6569740886b09', 2, 3),
 (31, '65697408870c4', 2, 4),
 (32, '6569740887312', 3, 1),
 (33, '6569740887596', 3, 2),
@@ -215,22 +230,17 @@ INSERT INTO `keys` (`id`, `clave`, `id_videojuego`, `id_plataforma`) VALUES
 (35, '65697408879dc', 3, 4),
 (36, '6569740887c06', 4, 1),
 (37, '6569740887eaf', 4, 2),
-(38, '65697408880b8', 4, 3),
 (39, '65697408882cf', 4, 4),
-(40, '65697408884ff', 5, 1),
 (41, '6569740888730', 5, 2),
-(42, '656974088895e', 5, 3),
 (43, '6569740888be7', 5, 4),
 (44, '6569740888e19', 6, 1),
 (45, '6569740889040', 6, 2),
-(46, '65697408891f1', 6, 3),
 (47, '656974088942e', 6, 4),
 (48, '65697408896dd', 7, 1),
 (49, '65697408898f9', 7, 2),
 (50, '6569740889b1c', 7, 3),
 (51, '6569740889d30', 7, 4),
 (52, '6569740889f52', 8, 1),
-(53, '656974088a109', 8, 2),
 (54, '656974088a2b4', 8, 3),
 (55, '656974088a464', 8, 4),
 (56, '656974088a612', 9, 1),
@@ -249,7 +259,6 @@ INSERT INTO `keys` (`id`, `clave`, `id_videojuego`, `id_plataforma`) VALUES
 (69, '656974088bc37', 12, 2),
 (70, '656974088bddd', 12, 3),
 (71, '656974088bf6b', 12, 4),
-(72, '656974088c121', 13, 1),
 (73, '656974088c2cf', 13, 2),
 (74, '656974088c485', 13, 3),
 (75, '656974088c631', 13, 4),
@@ -284,7 +293,6 @@ INSERT INTO `keys` (`id`, `clave`, `id_videojuego`, `id_plataforma`) VALUES
 (104, '656974088f6ec', 21, 1),
 (105, '656974088f89a', 21, 2),
 (106, '656974088fa4e', 21, 3),
-(107, '656974088fc03', 21, 4),
 (108, '656974088fd7b', 22, 1),
 (109, '656974088ff28', 22, 2),
 (110, '65697408900d8', 22, 3),
@@ -307,7 +315,6 @@ INSERT INTO `keys` (`id`, `clave`, `id_videojuego`, `id_plataforma`) VALUES
 (127, '6569740891ef5', 26, 4),
 (128, '65697408920a1', 27, 1),
 (129, '6569740892286', 27, 2),
-(130, '656974089242e', 27, 3),
 (131, '65697408925e4', 27, 4),
 (132, '6569740892792', 28, 1),
 (133, '6569740892940', 28, 2),
@@ -325,8 +332,6 @@ INSERT INTO `keys` (`id`, `clave`, `id_videojuego`, `id_plataforma`) VALUES
 (145, '6569740893f93', 31, 2),
 (146, '656974089414b', 31, 3),
 (147, '65697408942ff', 31, 4),
-(148, '6569f70479e65', 1, 1),
-(149, '6569f70483be2', 1, 1),
 (150, '6569f70483eb1', 1, 1),
 (151, '6569f70484107', 1, 1),
 (152, '6569f7048431d', 1, 1),
@@ -357,6 +362,24 @@ INSERT INTO `plataformas` (`id`, `nombre_plataforma`) VALUES
 (2, 'PlayStation'),
 (3, 'Nintendo'),
 (4, 'PC');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `site_settings`
+--
+
+CREATE TABLE `site_settings` (
+  `id` int(11) NOT NULL,
+  `maintenance_mode` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `site_settings`
+--
+
+INSERT INTO `site_settings` (`id`, `maintenance_mode`) VALUES
+(1, 0);
 
 -- --------------------------------------------------------
 
@@ -402,7 +425,7 @@ CREATE TABLE `videojuegos` (
 --
 
 INSERT INTO `videojuegos` (`id`, `nombre_videojuego`, `imagen_videojuego`, `descripcion`) VALUES
-(1, 'Assassins Creed Valhalla', 'AssassinsCreedValhalla.jpg', 'El viaje de Eivor llega a su fin en Assassin\'s Creed Valhalla: El último capítulo, un nuevo paquete de historia gratuito que cierra la saga del Matalobos. Una historia común es una misión gratuita de Assassin\'s Creed Valhalla protagonizada por Roshan, de Assassin\'s Creed Mirage.\n\nForja tu propia leyenda vikinga a 60 FPS y en resolución 4K. Ponte en la piel de Eivor, una leyenda vikinga, y explora la Inglaterra de los años oscuros mientras saqueas a tus enemigos, haces prosperar tu asentamiento, consolidas tu poder político y luchas por ganarte un sitio entre los dioses en el Valhalla.\n\n- Dirige épicos saqueos vikingos contra fortalezas y tropas sajonas.\n- Lucha a dos manos con poderosas armas y revive el brutal estilo de combate de los vikingos.\n- Ponte a prueba con la mayor variedad de enemigos jamás vista en Assassin\'s Creed.\n- Forja el camino de tu personaje y el de tu clan con cada decisión que tomes.\n- Explora un mundo abierto ambientado en los años oscuros, desde las escarpadas costas de Noruega hasta los hermosos reinos de Inglaterra.'),
+(1, 'Assassins Creed Valhalla Modificado CP-06', 'AssassinsCreedValhalla.jpg', 'El viaje de Eivor llega a su fin en Assassin\'s Creed Valhalla: El último capítulo, un nuevo paquete de historia gratuito que cierra la saga del Matalobos. Una historia común es una misión gratuita de Assassin\'s Creed Valhalla protagonizada por Roshan, de Assassin\'s Creed Mirage.\r\n\r\nForja tu propia leyenda vikinga a 60 FPS y en resolución 4K. Ponte en la piel de Eivor, una leyenda vikinga, y explora la Inglaterra de los años oscuros mientras saqueas a tus enemigos, haces prosperar tu asentamiento, consolidas tu poder político y luchas por ganarte un sitio entre los dioses en el Valhalla.\r\n\r\n- Dirige épicos saqueos vikingos contra fortalezas y tropas sajonas.\r\n- Lucha a dos manos con poderosas armas y revive el brutal estilo de combate de los vikingos.\r\n- Ponte a prueba con la mayor variedad de enemigos jamás vista en Assassin\'s Creed.\r\n- Forja el camino de tu personaje y el de tu clan con cada decisión que tomes.\r\n- Explora un mundo abierto ambientado en los años oscuros, desde las escarpadas costas de Noruega hasta los hermosos reinos de Inglaterra.'),
 (2, 'Cyberpunk 2077', 'Cyberpunk2077.jpg', 'Cyberpunk 2077 es un RPG de aventura y acción de mundo abierto ambientado en la megalópolis de Night City, donde te pondrás en la piel de un mercenario o una mercenaria ciberpunk y vivirás su lucha a vida o muerte por la supervivencia. \n\nMejorado para la nueva generación y con contenido adicional gratuito. Personaliza tu personaje y tu estilo de juego a medida que aceptas trabajos, te labras una reputación y desbloqueas mejoras. Las relaciones que forjes y las decisiones que tomes darán forma al mundo que te rodea. Aquí nacen las leyendas. \n\n¿Cuál será la tuya?'),
 (3, 'The Last of Us Part II', 'TheLastOfUsPartII.jpg', 'Cinco años después de su peligroso viaje a través de unos Estados Unidos pospandemia, Ellie y Joel logran establecerse en Jackson, Wyoming. \n\nVivir entre una próspera comunidad de sobrevivientes les ha concedido paz y estabilidad, a pesar de la amenaza constante de los infectados y de otros sobrevivientes más desesperados.\n\nCuando un evento violento interrumpe esa paz, Ellie se embarca en un viaje incesante para obtener justicia y llegar a un cierre. A medida que caza a los responsables uno por uno, deberá enfrentarse a las devastadoras repercusiones físicas y emocionales de sus acciones.'),
 (4, 'Call of Duty: Warzone', 'CallOfDutyWarzone.jpg', 'Bienvenido a Warzone y Al Mazrah, el área metropolitana de la República de Adal y sus alrededores en la próxima versión de la gran experiencia gratuita del Battle Royale de Call of Duty. Al Mazrah es el mapa de Battle Royale más grande e inmersivo. \n\nAl Mazrah presenta innovaciones en la jugabilidad, 18 puntos de interés, mecánicas de jugador atrapantes y el nuevo modo Zona desmilitarizada de mundo abierto basado en objetivos. Aunque seas nuevo en Warzone o no conozcas el calor de Al Mazrah, aquí habrá algo para todos los jugadores de Call of Duty. \n\nMás adelante en la temporada, los operadores del Ritual oscuro invocarán monstruos por todo Al Mazrah, y solo tú y tu equipo podrán enviarlos de regreso a donde pertenecen.'),
@@ -432,7 +455,11 @@ INSERT INTO `videojuegos` (`id`, `nombre_videojuego`, `imagen_videojuego`, `desc
 (28, 'Devil May Cry V', 'DevilMayCryV.jpg', '¡¡DEVIL MAY CRY HA VUELTO, COLEGA!! Este legendario juego de acción espectacular regresa mejor que nunca en la versión definitiva de este galardonado superéxito.\n\nNuevas características:\n\n-Nuevo personaje jugable: el hermano y archirrival de Dante, Vergil\n- Modo Caballero oscuro legendario: un modo tipo horda extremadamente desafiante, con montones de enemigos\n- Modo Turbo: haz el juego aún más emocionante multiplicando la velocidad x1,2\n- Compatibilidad con trazado de rayos: esta tecnología de nueva generación lleva el ya prácticamente fotorrealista mundo de DMC5 a un nuevo nivel de incomparable espectacularidad gráfica sin parangón\n- Modo Alta frecuencia gráfica: para una acción superfluida\n\nNota: ciertos trofeos no pueden obtenerse jugando como Vergil.'),
 (29, 'Bayonetta 2', 'Bayonetta2.jpg', 'Nacida de la unión prohibida entre los Sabios de Lumen y las Brujas de Umbra, la poderosa bruja Bayonetta viaja desde un pasado lejano al tiempo presente. Con su grácil estilo de lucha e incomparables poderes mágicos, es capaz de cautivar y aterrorizar a sus enemigos en sus momentos finales.\n\nArmada con mortales armas y habilidades, Bayonetta abruma a sus rivales con sus movimientos y ataques. Gracias a la magia, puede desatar una habilidad llamada Clímax de Umbra para invocar monstruos demoníacos y propinar poderosos ataques repetidamente.'),
 (30, 'Rise Of The Tomb Raider', 'RiseOfTheTombRaider.jpg', 'Rise of the Tomb Raider: 20º aniversario incluye el aclamado juego nominado a más de 75 premios, Rise of the Tomb Raider, en el que Lara Croft se convierte en una superviviente en su primera expedición como saqueadora de tumbas en las zonas más peligrosas y remotas de Siberia.\n\nRise of the Tomb Raider: 20º aniversario también incluye nuevo contenido para un jugador “Lazos de sangre”, soporte para realidad virtual, nuevo modo Aguante cooperativo, nuevo modo de dificultad “Superviviente definitiva” para la campaña, el atuendo y la pistola del 20º aniversario y 5 atuendos clásicos de Lara. También todos los contenidos descargables lanzados previamente, como: Baba Yaga: El templo de la bruja, modo Aguante, El despertar de la fría oscuridad, 12 atuendos, 7 armas y 35 tarjetas de expedición. Con más de 50 horas de juego, es la versión más completa de la premiada experiencia.'),
-(31, 'Shadow Of The Tomb Raider', 'ShadowOfTheTombRaider.jpg', 'Vive el momento más crucial de Lara Croft. En Shadow of the Tomb Raider, Lara debe dominar una selva mortal, superar tumbas aterradoras y perseverar en su hora más aciaga. Mientras trata de detener un apocalipsis maya, deberá convertirse en la saqueadora de tumbas que está destinada a ser.\n\nLucha por la supervivencia: domina la selva para sobrevivir. Explora entornos subacuáticos llenos de cavidades y profundos sistemas de túneles.\nSé uno con la selva: Lara debe aprovecharla para atacar y desaparecer como un jaguar, aterrando a sus enemigos.\nDescubre tumbas aterradoras y repletas de puzles letales que requieren técnicas avanzadas para acceder a ellas.\nDesentierra la historia viva: descubre la Ciudad Oculta y explora la mayor instalación jamás vista en Tomb Raider.');
+(31, 'Shadow Of The Tomb Raider', 'ShadowOfTheTombRaider.jpg', 'Vive el momento más crucial de Lara Croft. En Shadow of the Tomb Raider, Lara debe dominar una selva mortal, superar tumbas aterradoras y perseverar en su hora más aciaga. Mientras trata de detener un apocalipsis maya, deberá convertirse en la saqueadora de tumbas que está destinada a ser.\n\nLucha por la supervivencia: domina la selva para sobrevivir. Explora entornos subacuáticos llenos de cavidades y profundos sistemas de túneles.\nSé uno con la selva: Lara debe aprovecharla para atacar y desaparecer como un jaguar, aterrando a sus enemigos.\nDescubre tumbas aterradoras y repletas de puzles letales que requieren técnicas avanzadas para acceder a ellas.\nDesentierra la historia viva: descubre la Ciudad Oculta y explora la mayor instalación jamás vista en Tomb Raider.'),
+(32, 'Prueba 2 Modificado 2', 'Prueba 2 Modificado 2.jpg', '  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at fermentum elit. Nulla ultrices lacinia ex, id semper ex porttitor sed. Sed a tortor fringilla, rhoncus augue vitae, tincidunt nisi. Aenean varius euismod euismod. Etiam orci eros, maximus a justo id, faucibus accumsan ex. Cras ornare pharetra massa, in mattis urna mattis id. Donec ante nisi, vulputate sit amet libero vel, dictum fermentum ex. Aliquam tempus facilisis tortor id rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed a vehicula orci. Duis sit amet tellus vel lacus vestibulum molestie aliquet sit amet est. Donec vitae magna nisi. Mauris vel lobortis mi. Morbi sem mi, porttitor nec lectus eu, sollicitudin sodales quam.  '),
+(33, 'Nier Automata', 'Nier Automata.jpg', '  Descripción de ejemplo.   Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.  Descripción de ejemplo.'),
+(34, 'Bayonetta CP 06', 'Bayonetta CP 06.jpg', '  Descripcion de ejemplo.   Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.  Descripcion de ejemplo.'),
+(35, 'Bayonetta CP-06', 'Bayonetta CP-06.jpg', '  Descripcion de prueba.   Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.  Descripcion de prueba.');
 
 --
 -- Índices para tablas volcadas
@@ -469,6 +496,12 @@ ALTER TABLE `plataformas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `site_settings`
+--
+ALTER TABLE `site_settings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -488,13 +521,13 @@ ALTER TABLE `videojuegos`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `keys`
 --
 ALTER TABLE `keys`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 
 --
 -- AUTO_INCREMENT de la tabla `plataformas`
@@ -512,7 +545,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `videojuegos`
 --
 ALTER TABLE `videojuegos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Restricciones para tablas volcadas
