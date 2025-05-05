@@ -21,6 +21,18 @@ function esAdmin(): void
     }
 }
 
+function esAdminBool(): bool
+{
+    session_start();
+    if (!$_SESSION["admin"]) {
+        session_abort();
+        return false;
+    }
+    session_abort();
+    return true;
+    
+}
+
 
 function estaAutenticado(): void
 {
