@@ -88,7 +88,19 @@ incluirTemplate('header');
 
     <h1>Bienvenido al panel de Administración</h1>
 
+    <?php if (isset($_GET['mantenimiento']) && $_GET['mantenimiento'] === 'activado'): ?>
+        <div class="alerta exito">Modo mantenimiento activado correctamente.</div>
+    <?php endif; ?>
+    <?php if (isset($_GET['mantenimiento']) && $_GET['mantenimiento'] === 'desactivado'): ?>
+    <div class="alerta exito">Modo mantenimiento desactivado correctamente.</div>
+    <?php endif; ?>
+
+
     <a href="crear.php" class="boton-verde">Agregar videojuego</a>
+    <a href="activar_mantenimiento.php" class="boton-rojo">Activar mantenimiento</a>
+    <a href="desactivar_mantenimiento.php" class="boton-verde">Desactivar mantenimiento</a>
+
+
     <form action="" method="POST">
         <div class="campo">
             <label for="xbox">
@@ -131,7 +143,7 @@ incluirTemplate('header');
             ?>
                 <tr class="producto producto-ocultar <?php if ($contador >= 15) echo 'oculto ocultar'; ?>">
                     <td class="producto-idVideojuego">
-                        <a class="txt-negritas txt-verde" href="videojuego.php?id_videojuego=<?php echo $producto['idVideojuego']?>&&id_plataforma=<?php echo $producto['idPlataforma']?>" target="_blank">
+                        <a class="txt-negritas txt-verde" href="videojuego.php?id_videojuego=<?php echo $producto['idVideojuego'] ?>&&id_plataforma=<?php echo $producto['idPlataforma'] ?>" target="_blank">
                             <?php echo $producto['idVideojuego']; ?>
                         </a>
                     </td>
