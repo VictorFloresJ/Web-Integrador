@@ -32,7 +32,7 @@ $autenticado = $_SESSION['login'] ?? false;
                 <!-- Incluir el archivo PHP para obtener las opciones de divisas -->
                 <?php include('obtenerDivisas.php'); ?>
             </select>
-        </div>
+        </div><?php include('obtenerDivisas.php'); ?>
 
 
             <a href="<?php echo (!$autenticado) ? 'login.php' : 'usuario.php'; ?>">

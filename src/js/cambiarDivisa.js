@@ -1,4 +1,6 @@
 // Obtener el select de divisas y el div que contiene las tasas de cambio
+
+
 const currencySelect = document.getElementById('currency-select');
 const tasasDeCambioDiv = document.getElementById('tasas-de-cambio');
 

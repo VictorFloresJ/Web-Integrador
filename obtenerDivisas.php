@@ -33,6 +33,6 @@ foreach ($tasas as $codigoDivisa => $tasa) {
 $tasaJSON = json_encode($tasas); // Convertir las tasas a JSON para usarlas en JavaScript
 
 // Retornar las opciones de divisas generadas y el div oculto
-echo $opcionesDivisas;
+// echo $opcionesDivisas;
 echo "<div id='tasas-de-cambio' style='display:none;' data-tasas='$tasaJSON'></div>";
 ?>
