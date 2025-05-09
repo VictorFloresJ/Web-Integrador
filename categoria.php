@@ -47,7 +47,7 @@ incluirTemplate('filtros');
                         <div class="producto_contenido">
                             <p class="producto-titulo"><?php echo $videojuego['nombre']; ?></p>
                             <p class="producto-plataforma"><?php echo $videojuego['plataforma']; ?></p>
-                            <p class="precio">$<?php echo $videojuego['precio']; ?></p>
+                            <p class="precio" data-usd="<?php echo $videojuego['precio']; ?>">$<?php echo $videojuego['precio']; ?> USD</p>
                             <button type="submit" data-id="<?php echo $videojuego['id']; ?>" onclick="agregarAlCarrito(this)">
                                 <img src="./build/img/carrito-plus.svg" alt="icono carrito"> Agregar al carrito
                             </button>

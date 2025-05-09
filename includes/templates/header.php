@@ -25,6 +25,16 @@ $autenticado = $_SESSION['login'] ?? false;
             <img loading="lazy" src="./build/img/logo.png" alt="logo">
         </a>
         <div class="header-derecha">
+
+        <div class="cambio-divisas">
+            <label for="currency-select">Divisa:</label>
+            <select id="currency-select">
+                <!-- Incluir el archivo PHP para obtener las opciones de divisas -->
+                <?php include('obtenerDivisas.php'); ?>
+            </select>
+        </div><?php include('obtenerDivisas.php'); ?>
+
+
             <a href="<?php echo (!$autenticado) ? 'login.php' : 'usuario.php'; ?>">
                 <div class="usuario-icono">
                     <i class="fa-solid fa-user"></i>
@@ -47,3 +57,6 @@ $autenticado = $_SESSION['login'] ?? false;
         <a href="categoria.php?id=3">Nintendo</a>
         <a href="categoria.php?id=4">PC</a>
     </nav><!--.navegacion-->
+
+    <script src="build/js/cambiarDivisa.js"></script>
+    <script src="build/js/ajustarPrecioDivisa.js"></script>
