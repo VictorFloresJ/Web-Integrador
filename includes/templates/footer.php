@@ -40,4 +40,6 @@
 <!-- Iconos -->
 <script src="https://kit.fontawesome.com/8951c38389.js" crossorigin="anonymous"></script>
 
+<script src="./build/js/darkmode.js"></script> <!-- DarkMode-->
+
 <!-- El resto de Scripts se ponen de forma individual en cada archivo PHP, así como el fin de la etiqueta body y html -->
