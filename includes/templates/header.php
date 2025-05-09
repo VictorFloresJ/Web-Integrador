@@ -25,6 +25,7 @@ $autenticado = $_SESSION['login'] ?? false;
             <img loading="lazy" src="./build/img/logo.png" alt="logo">
         </a>
         <div class="header-derecha">
+            <img src="./build/img/dark-mode.svg" alt="dark mode icon" class="dark-mode-button" width="10">
             <a href="<?php echo (!$autenticado) ? 'login.php' : 'usuario.php'; ?>">
                 <div class="usuario-icono">
                     <i class="fa-solid fa-user"></i>
