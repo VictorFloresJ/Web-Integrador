@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/includes/app.php';
-
+#asd
 esAdmin();
 
 $id_videojuego = filter_var($_GET["idVideojuego"], FILTER_VALIDATE_INT);
