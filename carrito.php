@@ -78,6 +78,10 @@ incluirTemplate('header');
         </div>
     <?php endforeach; ?>
 
+    <div class="totales_contenedor">
+   
+</div>
+
     <form class="compras " method="POST">
 
         <fieldset class="compras_productos">

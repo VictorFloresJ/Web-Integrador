@@ -164,3 +164,44 @@
 .w-100 {
     width: max-content;
 }
+
+.totales_contenedor {
+  width: 100%;
+  max-width: 800px; /* para que no sea demasiado ancho en pantallas grandes */
+  margin: 20px auto 40px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.totales_contenedor p {
+  font-size: 1.15rem;
+  margin: 8px 0;
+}
+
+.totales_contenedor p strong {
+  font-size: 1.3rem;
+  color: #0078d7; /* azul profesional */
+}
+
+.totales_contenedor p small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  text-align: right;
+}
+
+/* Opcional: resaltar el subtotal y el iva con iconos o colores suaves */
+.totales_contenedor p:nth-child(1) {
+  color: #444;
+}
+
+.totales_contenedor p:nth-child(2) {
+  color: #555;
+}
