@@ -4,14 +4,14 @@ require __DIR__ . "/includes/app.php";
 $nombreVideojuego = mysqli_escape_string($db, $_GET['busqueda']);
 
 $query = "SELECT videojuegos.id AS id,
-          videojuegos.imagen_videojuego AS imagen,
           plataformas.nombre_plataforma AS plataforma,
+          videojuegos.nombre_videojuego AS nombre,
           plataformas.id AS idPlataforma,
           inventario.precio AS precio
           FROM inventario
           JOIN videojuegos ON videojuegos.id = inventario.id_videojuego
           JOIN plataformas ON plataformas.id = inventario.id_plataforma
-          WHERE videojuegos.nombre_videojuego = '$nombreVideojuego' AND inventario.cantidad > 0";
+          WHERE videojuegos.nombre_videojuego LIKE '%$nombreVideojuego%'";
 
 
 $resultado = $db->query($query);
@@ -32,8 +32,8 @@ incluirTemplate('header');
         <?php $row1 = mysqli_fetch_assoc($resultado); ?>
         <img src="images/<?php echo $row1['imagen'] ?>" alt="imagen asociada">
         <a href="videojuego.php?id_videojuego=<?php echo $row1['id']; ?>&id_plataforma=<?php echo $row1['idPlataforma']; ?>" class="busqueda-resultado">
-            <h2 class="resultado-titulo"><?php echo $nombreVideojuego; ?></h2>
             <p class="resultado-precio">$<?php echo $row1['precio']; ?></p>
+            <h2 class="resultado-titulo"><?php echo $row1['nombre']; ?></h2>
             <?php
             $idPlataforma = $row1['idPlataforma'];
             $plataforma = '';
@@ -57,8 +57,8 @@ incluirTemplate('header');
 
         <?php while ($row = mysqli_fetch_assoc($resultado)) : ?>
             <a href="videojuego.php?id_videojuego=<?php echo $row['id']; ?>&id_plataforma=<?php echo $row['idPlataforma']; ?>" class="busqueda-resultado">
-                <h2 class="resultado-titulo"><?php echo $nombreVideojuego; ?></h2>
-                <p class="resultado-precio">$<?php echo $row['precio']; ?></p>
+            <p class="resultado-precio">$<?php echo $row1['precio']; ?></p>
+            <h2 class="resultado-titulo"><?php echo $row1['nombre']; ?></h2>
                 <?php
                 $idPlataforma = $row['idPlataforma'];
                 $plataforma = '';
