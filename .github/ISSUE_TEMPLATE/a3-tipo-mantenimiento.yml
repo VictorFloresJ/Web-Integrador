@@ -1,0 +1,22 @@
+name: "A3 – Determinar tipo de mantenimiento"
+description: "Template para que el mantenedor clasifique el tipo de mantenimiento"
+title: "A3 – Determinar tipo de mantenimiento [MR-ID]"
+labels: ["A3-TipoMantenimiento", "Pendiente-Validación"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Objetivo
+        Determinar el tipo de mantenimiento (Correctivo, Preventivo, Perfectivo, Adaptativo) usando la guía adjunta.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist para el mantenedor
+      options:
+        - label: Revisar el Registro de MR-[ID] y evidencias
+        - label: Consultar la guía de clasificación
+        - label: Completar la plantilla de decisión
+        - label: Responder al issue con la plantilla
+        - label: Guardar plantilla en Documentos Generados > MR-[ID]
