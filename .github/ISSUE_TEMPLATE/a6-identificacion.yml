@@ -1,0 +1,36 @@
+name: A6.1 – Identificación de archivos y dependencias
+description: Sub-issue para documentar identificación de archivos y dependencias (MR-[ID])
+title: "A6.1 – Identificación de archivos y dependencias [MR-ID]"
+labels: ["mantenimiento", "identificación"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎯 Objetivo
+        Identificar archivos afectados y dependencias para el mantenimiento.
+
+  - type: textarea
+    id: evidencias
+    attributes:
+      label: Evidencias recuperadas
+      description: Copiar lo descrito en Sección 2 del Registro de MR-[ID]
+
+  - type: textarea
+    id: archivos
+    attributes:
+      label: Archivos identificados
+      description: Listado de archivos afectados o candidatos para mejora
+
+  - type: textarea
+    id: dependencias
+    attributes:
+      label: Dependencias
+      description: Describir dependencias externas e internas detectadas
+
+  - type: textarea
+    id: plantilla_mapa
+    attributes:
+      label: Plantilla Mapa de referencias
+      description: Adjuntar enlace o archivo del mapa de referencias
