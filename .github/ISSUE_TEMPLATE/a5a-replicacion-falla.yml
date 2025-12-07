@@ -8,53 +8,39 @@ body:
   - type: markdown
     attributes:
       value: |
-        # A5a – Replicación de la falla [MR-ID]
-
         ## 🎯 Objetivo
         Garantizar que el responsable técnico tenga acceso autorizado al sistema, entorno o documentación necesaria para replicar la falla o validar la propuesta, dejando evidencia en plantillas y en el Registro de MR-[ID].
 
-        ---
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist de pasos (Mantenedor)
+      options:
+        - label: Revisar Sección 1 del Registro de MR-[ID]
+        - label: Descargar el repositorio desde GitHub
+        - label: Instalar el sistema en entorno local siguiendo README.md / INSTALL.md
+        - label: Documentar instalación en la plantilla Evidencia de instalación
+        - label: Replicar la falla siguiendo la descripción del MR
+        - label: Documentar acciones y resultados en la plantilla Replicación de falla
+        - label: Capturar evidencia (logs, capturas, mensajes de error)
+        - label: Cambiar estatus del issue a Pendiente-Validación
+        - label: Actualizar Registro de MR-[ID] y Historial
+        - label: Notificar en este issue que la documentación fue actualizada
 
-        ## 📥 Entradas
-        - Registro de MR-[ID] actualizado en Sección 2 con confirmación de acceso (Registro de MR-[ID] – acceso habilitado).
-        - Plantillas oficiales adjuntas:
-          - Evidencia de instalación para el mantenimiento.
-          - Replicación de falla mantenimiento.
-          - Validación de sugerencia del mantenimiento.
+  - type: textarea
+    id: evidencia_instalacion
+    attributes:
+      label: Evidencia de instalación
+      description: Subir archivo o enlace con la plantilla de instalación
 
-        ---
+  - type: textarea
+    id: replicacion_falla
+    attributes:
+      label: Replicación de la falla
+      description: Subir archivo o enlace con la plantilla de replicación
 
-        ## ✅ Checklist de pasos (Mantenedor)
-
-        - [ ] Revisar Sección 1 del Registro de MR-[ID] (descripción de la falla, navegador, etc.).
-        - [ ] Descargar el repositorio desde GitHub.
-        - [ ] Instalar el sistema en entorno local siguiendo README.md / INSTALL.md o guías oficiales.
-        - [ ] Documentar instalación en la plantilla **Evidencia de instalación para el mantenimiento** y adjuntar aquí.
-        - [ ] Replicar la falla siguiendo la descripción del MR.
-        - [ ] Documentar acciones y resultados en la plantilla **Replicación de falla mantenimiento** y adjuntar aquí.
-        - [ ] Capturar evidencia (logs, capturas, mensajes de error).
-        - [ ] Cambiar estatus del issue a **Pendiente-Validación** cuando todo esté completo.
-        - [ ] Actualizar Registro de MR-[ID] y Historial con referencia a las evidencias.
-        - [ ] Notificar en este issue que la documentación fue actualizada.
-
-        ---
-
-        ## 📎 Campos para adjuntar plantillas
-        - Evidencia de instalación: *(subir archivo o adjuntar enlace)*  
-        - Replicación de falla: *(subir archivo o adjuntar enlace)*  
-        - Validación de sugerencia: *(si aplica, subir archivo o adjuntar enlace)*  
-
-        ---
-
-        ## 📌 Comentario final (Mantenedor)
-        Al concluir, dejar un comentario con el siguiente formato:
-
-        ```markdown
-        ### ✅ Actividad A5a completada
-        - Plantilla de instalación adjunta ✔️
-        - Plantilla de replicación adjunta ✔️
-        - Registro de MR actualizado ✔️
-        - Historial actualizado ✔️
-
-        Solicito revisión del LP.
-        ```
+  - type: textarea
+    id: comentario_final
+    attributes:
+      label: Comentario final (Mantenedor)
+      description: "Al concluir, dejar un comentario con el formato: 'Actividad A5a completada. Solicito revisión del LP.'"
