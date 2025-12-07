@@ -1,0 +1,82 @@
+name: A5b – Validación de sugerencia de mejora
+description: Template para levantar el issue de validación de una sugerencia (usar MR-[ID])
+title: "A5b – Validación de sugerencia [MR-ID]"
+labels: ["mantenimiento", "Pendiente-Validación"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎯 Objetivo
+        Garantizar que el responsable técnico valide la viabilidad y no duplicidad de la sugerencia de mejora, dejando evidencia clara y trazable.
+
+  - type: input
+    id: mr_id
+    attributes:
+      label: MR-ID
+      description: Identificador del mantenimiento (ej. MR-1234)
+      placeholder: MR-XXXX
+
+  - type: input
+    id: repo_url
+    attributes:
+      label: Repositorio GitHub
+      description: URL del repositorio asociado (con acceso habilitado)
+      placeholder: https://github.com/organizacion/repositorio
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist de pasos (Mantenedor)
+      options:
+        - label: Revisar Sección 1 del Registro de MR-[ID] (descripción y contexto)
+        - label: Descargar el repositorio desde GitHub
+        - label: Instalar y ejecutar el sistema en entorno local; documentar en plantilla de instalación
+        - label: Revisar rutas/servicios/módulos para detectar implementaciones similares
+        - label: Documentar hallazgos en la plantilla "Validación de sugerencia del mantenimiento"
+        - label: Adjuntar la plantilla como comentario en este issue
+        - label: Cambiar estatus a Pendiente-Validación y notificar al LP
+
+  - type: textarea
+    id: resumen_sugerencia
+    attributes:
+      label: Resumen de la sugerencia
+      description: Copiar la descripción de la Sección 1 del Registro de MR-[ID]
+
+  - type: textarea
+    id: rutas_servicios_revisados
+    attributes:
+      label: Rutas / Servicios / Módulos revisados
+      description: Listado de rutas, controladores, servicios o módulos inspeccionados (incluir archivos y líneas relevantes)
+
+  - type: textarea
+    id: evidencia_encontrada
+    attributes:
+      label: Evidencias encontradas
+      description: Referencia a archivos, fragmentos de código, logs o capturas; incluir enlaces si aplica
+
+  - type: textarea
+    id: conclusion_mantenedor
+    attributes:
+      label: Conclusión del mantenedor
+      description: ¿La sugerencia es válida y no está duplicada? Indicar impacto y alcance estimado
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 📎 Plantillas a adjuntar (subir como archivos o enlaces en un comentario)
+        - Evidencia de instalación para el mantenimiento
+        - Validación de sugerencia del mantenimiento
+
+  - type: textarea
+    id: comentario_final
+    attributes:
+      label: Comentario final (para el LP)
+      description: Al terminar, el mantenedor debe indicar: "Actividad A5b completada. Solicito revisión del LP."
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Nota:** Cuando el mantenedor marque este issue como **Pendiente-Validación**, el LP revisará la evidencia. Si se requiere, se organizará una reunión informal por Teams y se registrará un acta usando el template `.github/templates/acta-validacion-sugerencia.md`. Copiar el acta y pegarla como comentario en este issue; guardar también una copia en Documentos Generados > MR-[ID].
