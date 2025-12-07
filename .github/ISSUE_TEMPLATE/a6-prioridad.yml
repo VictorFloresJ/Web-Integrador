@@ -1,0 +1,42 @@
+name: A6 – Asignación de prioridad
+description: Issue principal para coordinar la asignación de prioridad de mantenimiento (MR-[ID])
+title: "A6 – Asignación de prioridad [MR-ID]"
+labels: ["mantenimiento", "Pendiente-Validación"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎯 Objetivo
+        Coordinar la asignación de prioridad del mantenimiento, incluyendo identificación de archivos, asignación de prioridad y validación informal.
+
+  - type: input
+    id: mr_id
+    attributes:
+      label: MR-ID
+      description: Identificador del mantenimiento
+      placeholder: MR-XXXX
+
+  - type: textarea
+    id: guia_priorizacion
+    attributes:
+      label: Guía de priorización
+      description: Adjuntar enlace o referencia a la guía de priorización
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 📎 Sub-issues requeridos
+        - A6.1 – Identificación de archivos y dependencias
+        - A6.2 – Asignación de prioridad
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist general
+      options:
+        - label: Sub-issue A6.1 cerrado con mapa de referencias adjunto
+        - label: Sub-issue A6.2 cerrado con registro de prioridad adjunto
+        - label: Reunión informal realizada y acta adjunta
+        - label: Registro de MR-[ID] actualizado
