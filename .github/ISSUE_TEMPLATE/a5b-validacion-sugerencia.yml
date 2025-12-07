@@ -73,7 +73,7 @@ body:
     id: comentario_final
     attributes:
       label: Comentario final (para el LP)
-      description: Al terminar, el mantenedor debe indicar: "Actividad A5b completada. Solicito revisión del LP."
+      description: "Al terminar, el mantenedor debe indicar: \"Actividad A5b completada. Solicito revisión del LP.\""
 
   - type: markdown
     attributes:
