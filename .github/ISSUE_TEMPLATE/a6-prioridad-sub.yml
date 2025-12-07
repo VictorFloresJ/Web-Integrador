@@ -1,0 +1,20 @@
+name: A6.2 – Asignación de prioridad
+description: Sub-issue para documentar la asignación de prioridad (MR-[ID])
+title: "A6.2 – Asignación de prioridad [MR-ID]"
+labels: ["mantenimiento", "prioridad"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎯 Objetivo
+        Asignar prioridad al mantenimiento según impacto y guía de priorización.
+
+  - type: textarea
+    id: mapa_referencias
+    attributes:
+      label: Mapa de referencias
+      description: Enlace al archivo Mapa de referencias de archivos/módulos – [ID]
+
+  - type: dropdown
