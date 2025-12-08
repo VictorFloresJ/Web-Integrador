@@ -18,13 +18,6 @@ body:
       description: Identificador del mantenimiento (ej. MR-1234)
       placeholder: MR-XXXX
 
-  - type: input
-    id: repo_url
-    attributes:
-      label: Repositorio GitHub
-      description: URL del repositorio asociado (con acceso habilitado)
-      placeholder: https://github.com/organizacion/repositorio
-
   - type: checkboxes
     id: checklist
     attributes:
@@ -43,40 +36,3 @@ body:
     attributes:
       label: Resumen de la sugerencia
       description: Copiar la descripción de la Sección 1 del Registro de MR-[ID]
-
-  - type: textarea
-    id: rutas_servicios_revisados
-    attributes:
-      label: Rutas / Servicios / Módulos revisados
-      description: Listado de rutas, controladores, servicios o módulos inspeccionados (incluir archivos y líneas relevantes)
-
-  - type: textarea
-    id: evidencia_encontrada
-    attributes:
-      label: Evidencias encontradas
-      description: Referencia a archivos, fragmentos de código, logs o capturas; incluir enlaces si aplica
-
-  - type: textarea
-    id: conclusion_mantenedor
-    attributes:
-      label: Conclusión del mantenedor
-      description: ¿La sugerencia es válida y no está duplicada? Indicar impacto y alcance estimado
-
-  - type: markdown
-    attributes:
-      value: |
-        ### 📎 Plantillas a adjuntar (subir como archivos o enlaces en un comentario)
-        - Evidencia de instalación para el mantenimiento
-        - Validación de sugerencia del mantenimiento
-
-  - type: textarea
-    id: comentario_final
-    attributes:
-      label: Comentario final (para el LP)
-      description: "Al terminar, el mantenedor debe indicar: \"Actividad A5b completada. Solicito revisión del LP.\""
-
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        **Nota:** Cuando el mantenedor marque este issue como **Pendiente-Validación**, el LP revisará la evidencia. Si se requiere, se organizará una reunión informal por Teams y se registrará un acta usando el template `.github/templates/acta-validacion-sugerencia.md`. Copiar el acta y pegarla como comentario en este issue; guardar también una copia en Documentos Generados > MR-[ID].
