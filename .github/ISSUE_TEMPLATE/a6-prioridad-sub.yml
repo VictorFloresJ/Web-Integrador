@@ -1,6 +1,6 @@
-name: A6.2 – Asignación de prioridad
-description: Sub-issue para documentar la asignación de prioridad (MR-[ID])
-title: "A6.2 – Asignación de prioridad [MR-ID]"
+name: "a6 - Asignación de prioridad"
+description: "Sub-issue para documentar la asignación de prioridad (MR-[ID])"
+title: "A6.2 - Asignación de prioridad [MR-ID]"
 labels: ["mantenimiento", "prioridad"]
 assignees: []
 
@@ -9,12 +9,19 @@ body:
     attributes:
       value: |
         ## 🎯 Objetivo
-        Asignar prioridad al mantenimiento según impacto y guía de priorización.
+        Asignar prioridad al mantenimiento según impacto y guía de priorización.  
+        La evidencia debe registrarse en la plantilla:  
+        **Asignación de prioridad – MR-[ID]**
 
-  - type: textarea
-    id: mapa_referencias
+  - type: checkboxes
+    id: checklist
     attributes:
-      label: Mapa de referencias
-      description: Enlace al archivo Mapa de referencias de archivos/módulos – [ID]
-
-  - type: dropdown
+      label: "Checklist de pasos (Mantenedor)"
+      options:
+        - label: "Revisar el mapa de referencias de archivos/módulos – [ID]"
+        - label: "Identificar el impacto en los módulos y servicios afectados"
+        - label: "Aplicar la guía de priorización para determinar nivel (Alta, Media, Baja)"
+        - label: "Completar la plantilla Asignación de prioridad – MR-[ID]"
+        - label: "Guardar la plantilla en Documentos Generados > MR-[ID] bajo el nombre 'Asignación de prioridad – MR-[ID]'"
+        - label: "Adjuntar la plantilla como comentario en este issue"
+        - label: "Notificar en este issue que la documentación fue actualizada"
