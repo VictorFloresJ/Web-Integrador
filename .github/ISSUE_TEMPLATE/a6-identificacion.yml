@@ -1,7 +1,7 @@
-name: A6.1 – Identificación de archivos y dependencias
-description: Sub-issue para documentar identificación de archivos y dependencias (MR-[ID])
-title: "A6.1 – Identificación de archivos y dependencias [MR-ID]"
-labels: ["mantenimiento", "identificación"]
+name: a6 – Sub-issue: Mapa de referencias
+description: Sub-issue para que el Mantenedor documente el mapa de referencias de archivos/módulos (MR-[ID])
+title: "A5a – Mapa de referencias [MR-ID]"
+labels: ["mantenimiento", "Pendiente-Validación"]
 assignees: []
 
 body:
@@ -9,28 +9,21 @@ body:
     attributes:
       value: |
         ## 🎯 Objetivo
-        Identificar archivos afectados y dependencias para el mantenimiento.
+        Documentar el mapa de referencias de archivos y módulos relacionados con el mantenimiento **MR-[ID]**, incluyendo archivo principal, dependencias, cantidad de módulos impactados y observaciones.  
+        La evidencia debe registrarse en la plantilla:  
+        **Mapa de referencias de archivos/módulos para el mantenimiento – [ID]**
 
-  - type: textarea
-    id: evidencias
+  - type: checkboxes
+    id: checklist
     attributes:
-      label: Evidencias recuperadas
-      description: Copiar lo descrito en Sección 2 del Registro de MR-[ID]
-
-  - type: textarea
-    id: archivos
-    attributes:
-      label: Archivos identificados
-      description: Listado de archivos afectados o candidatos para mejora
-
-  - type: textarea
-    id: dependencias
-    attributes:
-      label: Dependencias
-      description: Describir dependencias externas e internas detectadas
-
-  - type: textarea
-    id: plantilla_mapa
-    attributes:
-      label: Plantilla Mapa de referencias
-      description: Adjuntar enlace o archivo del mapa de referencias
+      label: Checklist de pasos (Mantenedor)
+      options:
+        - label: Identificar archivo(s) principal(es) relacionados con la falla o sugerencia
+        - label: Listar dependencias detectadas (archivos de los que depende)
+        - label: Listar servicios que dependen de este archivo
+        - label: Indicar cantidad total de módulos impactados
+        - label: Registrar observaciones relevantes sobre impacto y dependencias
+        - label: Completar la plantilla **Mapa de referencias de archivos/módulos para el mantenimiento – [ID]**
+        - label: Guardar la plantilla en *Documentos Generados > MR-[ID]* bajo el nombre “Mapa de referencias – MR-[ID]”
+        - label: Adjuntar la plantilla como comentario en este issue
+        - label: Notificar en este issue que la documentación fue actualizada
