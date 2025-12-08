@@ -18,19 +18,6 @@ body:
       description: Identificador del mantenimiento
       placeholder: MR-XXXX
 
-  - type: textarea
-    id: guia_priorizacion
-    attributes:
-      label: Guía de priorización
-      description: Adjuntar enlace o referencia a la guía de priorización
-
-  - type: markdown
-    attributes:
-      value: |
-        ### 📎 Sub-issues requeridos
-        - A6.1 – Identificación de archivos y dependencias
-        - A6.2 – Asignación de prioridad
-
   - type: checkboxes
     id: checklist
     attributes:
