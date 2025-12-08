@@ -11,6 +11,13 @@ body:
         ## 🎯 Objetivo
         Garantizar que el responsable técnico tenga acceso autorizado al sistema, entorno o documentación necesaria para replicar la falla o validar la propuesta, dejando evidencia en plantillas y en el Registro de MR-[ID].
 
+  - type: textarea
+    id: descripcion-falla
+    attributes:
+      label: Breve descripción de la falla
+      description: Incluir un resumen claro de la falla reportada (ej. pasos, entorno, navegador).
+      placeholder: "Ejemplo: Al acceder a la ruta /login en Chrome v118 se muestra error 500..."
+
   - type: checkboxes
     id: checklist
     attributes:
