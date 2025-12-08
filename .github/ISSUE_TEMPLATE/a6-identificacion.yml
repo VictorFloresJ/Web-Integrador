@@ -1,6 +1,6 @@
-name: a6 – Sub-issue: Mapa de referencias
-description: Sub-issue para que el Mantenedor documente el mapa de referencias de archivos/módulos (MR-[ID])
-title: "A5a – Mapa de referencias [MR-ID]"
+name: "A5a - Sub-issue: Mapa de referencias"
+description: "Sub-issue para que el Mantenedor documente el mapa de referencias de archivos/módulos (MR-[ID])"
+title: "A5a - Mapa de referencias [MR-ID]"
 labels: ["mantenimiento", "Pendiente-Validación"]
 assignees: []
 
@@ -16,14 +16,14 @@ body:
   - type: checkboxes
     id: checklist
     attributes:
-      label: Checklist de pasos (Mantenedor)
+      label: "Checklist de pasos (Mantenedor)"
       options:
-        - label: Identificar archivo(s) principal(es) relacionados con la falla o sugerencia
-        - label: Listar dependencias detectadas (archivos de los que depende)
-        - label: Listar servicios que dependen de este archivo
-        - label: Indicar cantidad total de módulos impactados
-        - label: Registrar observaciones relevantes sobre impacto y dependencias
-        - label: Completar la plantilla **Mapa de referencias de archivos/módulos para el mantenimiento – [ID]**
-        - label: Guardar la plantilla en *Documentos Generados > MR-[ID]* bajo el nombre “Mapa de referencias – MR-[ID]”
-        - label: Adjuntar la plantilla como comentario en este issue
-        - label: Notificar en este issue que la documentación fue actualizada
+        - label: "Identificar archivo(s) principal(es) relacionados con la falla o sugerencia"
+        - label: "Listar dependencias detectadas (archivos de los que depende)"
+        - label: "Listar servicios que dependen de este archivo"
+        - label: "Indicar cantidad total de módulos impactados"
+        - label: "Registrar observaciones relevantes sobre impacto y dependencias"
+        - label: "Completar la plantilla Mapa de referencias de archivos/módulos para el mantenimiento – [ID]"
+        - label: "Guardar la plantilla en Documentos Generados > MR-[ID] bajo el nombre 'Mapa de referencias – MR-[ID]'"
+        - label: "Adjuntar la plantilla como comentario en este issue"
+        - label: "Notificar en este issue que la documentación fue actualizada"
