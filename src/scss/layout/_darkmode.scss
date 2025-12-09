@@ -1,0 +1,108 @@
+@use "helpers/variables" as v;
+@use "helpers/mixins" as m;
+ 
+.dark-mode-button {
+    filter: invert(1);
+  }
+ 
+.dark-mode {
+  background-color: darken(v.$morado, 5%);
+ 
+  body,
+  .bg-claro,
+  .bg-oscuro,
+  .producto .producto_contenido,
+  .formulario,
+  .compras_checkout,
+  .administracion .table thead {
+    background-color: darken(v.$morado, 5%);
+    color: v.$blanco;
+  }
+ 
+  a,
+  h1, h2, h3, h4,
+  .header-derecha a,
+  .sobre-nosotros .sobre-nosotros_contenido,
+  .guia_contenido,
+  .compras-contenedor h1,
+  .administracion h1,
+  .busqueda-resultados h1,
+  .administracion_creacion h1 {
+    color: v.$blanco;
+  }
+ 
+  .producto .producto_contenido .precio,
+  .carrusel-card p.precio,
+  .videojuego .videojuego_contenido .precio,
+  .compras_videojuego .videojuego-precio {
+    color: darken(v.$verde, 5%);
+  }
+ 
+  .boton-amarillo,
+  .boton-rojo,
+  .boton-verde,
+  .producto_contenido button,
+  .compras_checkout input[type="submit"] {
+    color: v.$blanco;
+    background-color: darken(v.$moradoClaro, 5%);
+    &:hover {
+      background-color: darken(v.$moradoClaro, 10%);
+    }
+  }
+ 
+  .formulario label,
+  .formulario legend,
+  .formulario input:not([type="submit"]),
+  .formulario textarea,
+  .formulario select,
+  .compras_checkout label,
+  .compras_checkout input:not([type="submit"]),
+  .administracion_creacion label,
+  .administracion_creacion input,
+  .administracion_creacion textarea {
+    color: v.$blanco;
+    background-color: darken(v.$morado, 5%);
+    border: 1px solid darken(v.$moradoClaro, 5%);
+  }
+ 
+  .producto_contenido form img,
+  .producto_contenido button img,
+  .videojuego .videojuego_contenido img {
+    filter: invert(100%);
+  }
+ 
+  .table tr {
+    color: v.$blanco;
+  }
+ 
+  .alerta.error {
+    background-color: darken(v.$rojo, 5%);
+    color: v.$blanco;
+  }
+ 
+  .alerta.exito {
+    background-color: darken(v.$verde, 5%);
+    color: v.$blanco;
+  }
+ 
+  .carrusel-flecha-derecha,
+  .carrusel-flecha-izquierda {
+    background-color: darken(v.$moradoClaro, 5%);
+    color: v.$blanco;
+  }
+ 
+  .barra-busqueda form {
+    border-color: darken(v.$moradoClaro, 5%);
+    background-color: darken(v.$morado, 5%);
+    input,
+    button {
+      background-color: darken(v.$morado, 5%);
+      color: v.$blanco;
+    }
+  }
+ 
+  .slider-impar,
+  .slider-par {
+    background-color: darken(v.$morado, 5%);
+  }
+}
