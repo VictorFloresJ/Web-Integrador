@@ -1,6 +1,6 @@
-name: "a6 - Asignación de prioridad"
+name: "a6 - prioridad-sub"
 description: "Sub-issue para documentar la asignación de prioridad (MR-[ID])"
-title: "A6.2 - Asignación de prioridad [MR-ID]"
+title: "a6-prioridad-sub"
 labels: ["mantenimiento", "prioridad"]
 assignees: []
 
