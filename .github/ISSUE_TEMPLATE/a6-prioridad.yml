@@ -18,12 +18,4 @@ body:
       description: Identificador del mantenimiento
       placeholder: MR-XXXX
 
-  - type: checkboxes
-    id: checklist
-    attributes:
-      label: Checklist general
-      options:
-        - label: Sub-issue A6.1 cerrado con mapa de referencias adjunto
-        - label: Sub-issue A6.2 cerrado con registro de prioridad adjunto
-        - label: Reunión informal realizada y acta adjunta
-        - label: Registro de MR-[ID] actualizado
+  
