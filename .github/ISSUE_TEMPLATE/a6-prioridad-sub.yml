@@ -13,15 +13,20 @@ body:
         La evidencia debe registrarse en la plantilla:  
         **Asignación de prioridad – MR-[ID]**
 
-  - type: checkboxes
-    id: checklist
+    - type: input
+    id: prioridad_asignada
     attributes:
-      label: "Checklist de pasos (Mantenedor)"
-      options:
-        - label: "Revisar el mapa de referencias de archivos/módulos – [ID]"
-        - label: "Identificar el impacto en los módulos y servicios afectados"
-        - label: "Aplicar la guía de priorización para determinar nivel (Alta, Media, Baja)"
-        - label: "Completar la plantilla Asignación de prioridad – MR-[ID]"
-        - label: "Guardar la plantilla en Documentos Generados > MR-[ID] bajo el nombre 'Asignación de prioridad – MR-[ID]'"
-        - label: "Adjuntar la plantilla como comentario en este issue"
-        - label: "Notificar en este issue que la documentación fue actualizada"
+      label: 📌 Prioridad asignada
+      description: Seleccionar entre P1, P2, P3, P4 o P5 según la guía de priorización.
+      placeholder: P1–P5
+
+  - type: textarea
+    id: justificacion_breve
+    attributes:
+      label: 📝 Justificación breve
+      description: Resumen corto basado en el número de módulos afectados y el impacto.
+      placeholder: |
+        Ejemplo:
+        - Se afectan 4 módulos críticos.
+        - El impacto operativo es alto.
+        - Se asigna P2 según tabla de la guía.
