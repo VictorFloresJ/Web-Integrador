@@ -13,15 +13,9 @@ body:
         La evidencia debe registrarse en la plantilla:  
         **Asignación de prioridad – MR-[ID]**
 
-  - type: checkboxes
-    id: checklist
+  - type: input
+    id: mr_id
     attributes:
-      label: "Checklist de pasos (Mantenedor)"
-      options:
-        - label: "Revisar el mapa de referencias de archivos/módulos – [ID]"
-        - label: "Identificar el impacto en los módulos y servicios afectados"
-        - label: "Aplicar la guía de priorización para determinar nivel (Alta, Media, Baja)"
-        - label: "Completar la plantilla Asignación de prioridad – MR-[ID]"
-        - label: "Guardar la plantilla en Documentos Generados > MR-[ID] bajo el nombre 'Asignación de prioridad – MR-[ID]'"
-        - label: "Adjuntar la plantilla como comentario en este issue"
-        - label: "Notificar en este issue que la documentación fue actualizada"
+      label: MR-ID
+      description: Identificador del mantenimiento (ej. MR-1234)
+      placeholder: MR-XXXX
