@@ -25,6 +25,7 @@ $autenticado = $_SESSION['login'] ?? false;
             <img loading="lazy" src="./build/img/logo.png" alt="logo">
         </a>
         <div class="header-derecha">
+<<<<<<< HEAD
 
         <div class="cambio-divisas">
             <label for="currency-select">Divisa:</label>
@@ -35,6 +36,9 @@ $autenticado = $_SESSION['login'] ?? false;
         </div><?php include('obtenerDivisas.php'); ?>
 
 
+=======
+            <img src="./build/img/dark-mode.svg" alt="dark mode icon" class="dark-mode-button" width="10">
+>>>>>>> 20f218d (Agregado icono al template del header del sitio - MR-004)
             <a href="<?php echo (!$autenticado) ? 'login.php' : 'usuario.php'; ?>">
                 <div class="usuario-icono">
                     <i class="fa-solid fa-user"></i>
@@ -57,6 +61,9 @@ $autenticado = $_SESSION['login'] ?? false;
         <a href="categoria.php?id=3">Nintendo</a>
         <a href="categoria.php?id=4">PC</a>
     </nav><!--.navegacion-->
+<<<<<<< HEAD
 
     <script src="build/js/cambiarDivisa.js"></script>
     <script src="build/js/ajustarPrecioDivisa.js"></script>
+=======
+>>>>>>> 20f218d (Agregado icono al template del header del sitio - MR-004)
