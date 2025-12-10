@@ -19,7 +19,7 @@ body:
       label: MR-ID
       placeholder: "MR-XXXX"
 
-      - type: textarea
+  - type: textarea
     id: archivos_principales
     attributes:
       label: 📌 Archivos principales identificados
@@ -29,7 +29,7 @@ body:
         - /src/controllers/UserController.php
         - /src/services/NotificationService.js
 
-        - type: textarea
+  - type: textarea
     id: observaciones
     attributes:
       label: 📝 Observaciones relevantes
