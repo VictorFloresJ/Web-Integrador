@@ -18,18 +18,6 @@ body:
       description: Identificador del mantenimiento (ej. MR-1234)
       placeholder: MR-XXXX
 
-  - type: checkboxes
-    id: checklist
-    attributes:
-      label: Checklist de pasos (Mantenedor)
-      options:
-        - label: Revisar Sección 1 del Registro de MR-[ID] (descripción y contexto)
-        - label: Descargar el repositorio desde GitHub
-        - label: Instalar y ejecutar el sistema en entorno local; documentar en plantilla de instalación
-        - label: Revisar rutas/servicios/módulos para detectar implementaciones similares
-        - label: Documentar hallazgos en la plantilla "Validación de sugerencia del mantenimiento"
-        - label: Adjuntar la plantilla como comentario en este issue
-        - label: Cambiar estatus a Pendiente-Validación y notificar al LP
 
   - type: textarea
     id: resumen_sugerencia
