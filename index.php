@@ -37,7 +37,7 @@ incluirTemplate('header');
                     <a href="videojuego.php?id_videojuego=<?php echo $carruselCard['id_videojuego'];?>&id_plataforma=<?php echo $carruselCard['id_plataforma'];?>">
                         <img src="images/<?php echo $carruselCard['imagen_videojuego'];?>" alt="foto juego">
                         <p><?php echo $carruselCard['nombre_videojuego'];?></p>
-                        <p class="precio">$ <?php echo $carruselCard['precio'];?></p>
+                        <p class="precio" data-usd="<?php echo $carruselCard['precio']; ?>">$<?php echo $carruselCard['precio']; ?> USD</p>
                     </a>
                 </div><!--.carrusel-card-->
                 <?php endwhile ?>
@@ -75,7 +75,8 @@ incluirTemplate('header');
                     <a href="videojuego.php?id_videojuego=<?php echo $carruselCard['id_videojuego'];?>&id_plataforma=<?php echo $carruselCard['id_plataforma'];?>">
                         <img src="images/<?php echo $carruselCard['imagen_videojuego'];?>" alt="foto juego">
                         <p><?php echo $carruselCard['nombre_videojuego'];?></p>
-                        <p class="precio">$ <?php echo $carruselCard['precio'];?></p>
+                        <p class="precio" data-usd="<?php echo $carruselCard['precio']; ?>">$<?php echo $carruselCard['precio']; ?> USD</p>
+
                     </a>
                 </div><!--.carrusel-card-->
                 <?php endwhile ?>
@@ -113,7 +114,8 @@ incluirTemplate('header');
                     <a href="videojuego.php?id_videojuego=<?php echo $carruselCard['id_videojuego'];?>&id_plataforma=<?php echo $carruselCard['id_plataforma'];?>">
                         <img src="images/<?php echo $carruselCard['imagen_videojuego'];?>" alt="foto juego">
                         <p><?php echo $carruselCard['nombre_videojuego'];?></p>
-                        <p class="precio">$ <?php echo $carruselCard['precio'];?></p>
+                        <p class="precio" data-usd="<?php echo $carruselCard['precio']; ?>">$<?php echo $carruselCard['precio']; ?> USD</p>
+
                     </a>
                 </div><!--.carrusel-card-->
                 <?php endwhile ?>
@@ -151,7 +153,8 @@ incluirTemplate('header');
                     <a href="videojuego.php?id_videojuego=<?php echo $carruselCard['id_videojuego'];?>&id_plataforma=<?php echo $carruselCard['id_plataforma'];?>">
                         <img src="images/<?php echo $carruselCard['imagen_videojuego'];?>" alt="foto juego">
                         <p><?php echo $carruselCard['nombre_videojuego'];?></p>
-                        <p class="precio">$ <?php echo $carruselCard['precio'];?></p>
+                        <p class="precio" data-usd="<?php echo $carruselCard['precio']; ?>">$<?php echo $carruselCard['precio']; ?> USD</p>
+
                     </a>
                 </div><!--.carrusel-card-->
                 <?php endwhile ?>

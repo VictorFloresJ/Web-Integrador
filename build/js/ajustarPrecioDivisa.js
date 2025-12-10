@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".precio").forEach(t=>{const e=parseFloat(t.getAttribute("data-usd")),o=localStorage.getItem("divisa")||"USD",a=(e*(parseFloat(localStorage.getItem("valorDivisa"))||1)).toFixed(2),i=parseFloat(a).toLocaleString(void 0,{minimumFractionDigits:2,maximumFractionDigits:2});t.textContent=`$${i} ${o}`})});
+//# sourceMappingURL=ajustarPrecioDivisa.js.map
