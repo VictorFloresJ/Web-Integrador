@@ -45,7 +45,7 @@ incluirTemplate('header');
         </div>
         <div class="videojuego_contenido">
             <h1 class="producto-titulo"><?php echo $videojuego['nombre']; ?></h1>
-            <p class="precio">$ <?php echo $videojuego['precio']; ?></p>
+            <p class="precio" data-usd="<?php echo $videojuego['precio']; ?>">$<?php echo $videojuego['precio']; ?> USD</p>
             <p class="producto-plataforma"> <?php echo $videojuego['plataforma']; ?></p>
             <pre class="producto-descripcion"><?php echo $videojuego['descripcion'] ?></pre>
             <button type="submit" data-id="<?php echo $videojuego['id']; ?>" onclick="agregarAlCarrito(this)">
