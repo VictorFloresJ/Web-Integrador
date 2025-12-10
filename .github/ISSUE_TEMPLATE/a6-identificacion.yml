@@ -13,17 +13,28 @@ body:
         La evidencia debe registrarse en la plantilla:  
         **Mapa de referencias de archivos/módulos para el mantenimiento – [ID]**
 
-  - type: checkboxes
-    id: checklist
+  - type: input
+    id: mr_id
     attributes:
-      label: "Checklist de pasos (Mantenedor)"
-      options:
-        - label: "Identificar archivo(s) principal(es) relacionados con la falla o sugerencia"
-        - label: "Listar dependencias detectadas (archivos de los que depende)"
-        - label: "Listar servicios que dependen de este archivo"
-        - label: "Indicar cantidad total de módulos impactados"
-        - label: "Registrar observaciones relevantes sobre impacto y dependencias"
-        - label: "Completar la plantilla Mapa de referencias de archivos/módulos para el mantenimiento – [ID]"
-        - label: "Guardar la plantilla en Documentos Generados > MR-[ID] bajo el nombre 'Mapa de referencias – MR-[ID]'"
-        - label: "Adjuntar la plantilla como comentario en este issue"
-        - label: "Notificar en este issue que la documentación fue actualizada"
+      label: MR-ID
+      placeholder: "MR-XXXX"
+
+      - type: textarea
+    id: archivos_principales
+    attributes:
+      label: 📌 Archivos principales identificados
+      description: Lista breve de los archivos directamente relacionados con la falla o mejora.
+      placeholder: |
+        Ejemplo:
+        - /src/controllers/UserController.php
+        - /src/services/NotificationService.js
+
+        - type: textarea
+    id: observaciones
+    attributes:
+      label: 📝 Observaciones relevantes
+      description: Nota breve sobre impacto, complejidad o particularidades encontradas.
+      placeholder: |
+        Ejemplo:
+        - Existe dependencia circular potencial con NotificationService.
+        - UserController impacta flujos críticos de autenticación.
