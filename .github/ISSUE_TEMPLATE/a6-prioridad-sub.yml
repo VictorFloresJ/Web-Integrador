@@ -13,7 +13,7 @@ body:
         La evidencia debe registrarse en la plantilla:  
         **Asignación de prioridad – MR-[ID]**
 
-    - type: input
+  - type: input
     id: prioridad_asignada
     attributes:
       label: 📌 Prioridad asignada
