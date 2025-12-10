@@ -4,43 +4,80 @@ require __DIR__ . '/includes/app.php';
 $errores = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    /* ============================
+       VALIDAR RECAPTCHA
+    ============================ */
 
-    $email = ($_POST['email']) ? mysqli_real_escape_string($db, $_POST["email"]) : null;
-    $password = ($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : null;
+    if (!empty($_POST['g-recaptcha-response'])) {
+        $captcha = $_POST['g-recaptcha-response'];
+        $url = "https://www.google.com/recaptcha/api/siteverify";
+        $data = [
+            "secret" => $secretKey,
+            "response" => $captcha
+        ];
 
-    $errores[] = (!$email) ? 'E-Mail inválido' : null;
-    $errores[] = (!$password) ? 'Contraseña inválida' : null;
+        $options = [
+            "http" => [
+                "header"  => "Content-type: application/x-www-form-urlencoded\r\n",
+                "method"  => "POST",
+                "content" => http_build_query($data)
+            ]
+        ];
 
+        $context  = stream_context_create($options);
+        $verify = file_get_contents($url, false, $context);
+        $captchaSuccess = json_decode($verify);
 
-    $errores = array_filter($errores);
+        if ($captchaSuccess->success != true) {
+            $errores[] = "Verificación reCAPTCHA fallida. Intenta nuevamente.";
+        }
+
+    } else {
+        $errores[] = "Por favor confirma que no eres un robot.";
+    }
+
+    /* ==========================================
+       SOLO SI NO HAY ERRORES DEL CAPTCHA
+    ============================================*/
 
     if (empty($errores)) {
-        $query = "SELECT usuarios.nombre_usuario AS nombreUsuario,
-                  usuarios.email AS email,
-                  usuarios.password AS password,
-                  usuarios.id AS id,
-                  usuarios.admin AS privilegios
-                  FROM usuarios
-                  WHERE usuarios.email = '$email'";
 
-        $resultado = $db->query($query);
+        $email = ($_POST['email']) ? mysqli_real_escape_string($db, $_POST["email"]) : null;
+        $password = ($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : null;
 
-        if ($resultado->num_rows === 1) {
-            $auth = mysqli_fetch_assoc($resultado);
+        $errores[] = (!$email) ? 'E-Mail inválido' : null;
+        $errores[] = (!$password) ? 'Contraseña inválida' : null;
 
-            if ($auth['password'] === $password) {
-                session_start();
-                $_SESSION['usuario'] = $auth['nombreUsuario'];
-                $_SESSION['id'] = $auth['id'];
-                $_SESSION['login'] = true;
-                $_SESSION['admin'] = ($auth['privilegios'] == '1') ? true : false;
+        $errores = array_filter($errores);
 
-                header('Location: ' . $GLOBALS['raiz_sitio'] . 'panel_administracion.php');
+        if (empty($errores)) {
+            $query = "SELECT usuarios.nombre_usuario AS nombreUsuario,
+                      usuarios.email AS email,
+                      usuarios.password AS password,
+                      usuarios.id AS id,
+                      usuarios.admin AS privilegios
+                      FROM usuarios
+                      WHERE usuarios.email = '$email'";
+
+            $resultado = $db->query($query);
+
+            if ($resultado->num_rows === 1) {
+                $auth = mysqli_fetch_assoc($resultado);
+
+                if ($auth['password'] === $password) {
+                    session_start();
+                    $_SESSION['usuario'] = $auth['nombreUsuario'];
+                    $_SESSION['id'] = $auth['id'];
+                    $_SESSION['login'] = true;
+                    $_SESSION['admin'] = ($auth['privilegios'] == '1') ? true : false;
+
+                    header('Location: ' . $GLOBALS['raiz_sitio'] . 'panel_administracion.php');
+                } else {
+                    $errores[] = 'Contraseña incorrecta';
+                }
             } else {
-                $errores[] = 'Contraseña incorrecta';
+                $errores[] = 'Usuario no existe';
             }
-        } else {
-            $errores[] = 'Usuario no existe';
         }
     }
 }
@@ -48,7 +85,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,6 +92,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="build/css/app.css">
+
+    <!-- SCRIPT RECAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -68,11 +107,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="posicionador">
         <main class="login">
             <div class="login_bienvenida">
-                <p>
-                    ¡Hola de nuevo!<br>
-                    ¡Bienvenido otra vez!
-                </p>
-            </div><!--.login_bienvenida-->
+                <p>¡Hola de nuevo!<br>¡Bienvenido otra vez!</p>
+            </div>
+
             <div class="login_formulario">
                 <form class="formulario" method="POST" id="loginForm">
                     <fieldset class="informacion">
@@ -88,24 +125,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
                         </div>
 
+                        <!-- RECAPTCHA V2 -->
+                        <div class="g-recaptcha" data-sitekey="6LcGiScsAAAAAHqs8IvypWHB2o84fyCRXoQRoMh_"></div>
+                        <br>
+
                         <input type="submit" value="Iniciar sesión" class="boton-amarillo-block">
                     </fieldset>
-                </form><!--.formulario-->
-                <?php foreach ($errores as $error) : ?>
-                    <div class="alerta error">
-                        <?php echo $error; ?>
-                    </div>
+                </form>
+
+                <?php foreach ($errores as $error): ?>
+                    <div class="alerta error"><?php echo $error; ?></div>
                 <?php endforeach; ?>
-            </div><!--.login_formulario-->
-        </main><!--.login-->
+            </div>
+        </main>
     </div>
-
-    <!-- Modernizr  -->
-    <script src="build/js/modernizr.js"></script>
-    <!-- Validacion login  -->
-    <script src="build/js/validacionLogin.js"></script>
-    <!-- Iconos -->
-    <script src="https://kit.fontawesome.com/8951c38389.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
