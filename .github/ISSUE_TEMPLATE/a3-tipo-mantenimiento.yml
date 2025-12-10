@@ -10,13 +10,16 @@ body:
         ## Objetivo
         Determinar el tipo de mantenimiento (Correctivo, Preventivo, Perfectivo, Adaptativo) usando la guía adjunta.
 
-  - type: checkboxes
-    id: checklist
+  - type: textarea
+    id: tipo
     attributes:
-      label: Checklist para el mantenedor
-      options:
-        - label: Revisar el Registro de MR-[ID] y evidencias
-        - label: Consultar la guía de clasificación
-        - label: Completar la plantilla de decisión
-        - label: Responder al issue con la plantilla
-        - label: Guardar plantilla en Documentos Generados > MR-[ID]
+      label: 📌 Tipo de mantenimiento asignado
+      description: Selecciona o describe el tipo determinado (Correctivo, Preventivo, Perfectivo, Adaptativo).
+      placeholder: "Ejemplo: Correctivo"
+
+  - type: textarea
+    id: razon
+    attributes:
+      label: 📝 Razón breve de la clasificación
+      description: Explica en pocas líneas el motivo de la selección.
+      placeholder: "Ejemplo: La falla afecta funcionalidad y requiere corrección inmediata."
